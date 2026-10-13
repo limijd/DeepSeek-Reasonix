@@ -21,6 +21,7 @@ import (
 
 	"github.com/gorilla/websocket"
 
+	"reasonix/internal/base/netpolicy"
 	"reasonix/internal/contract/provider"
 	"reasonix/internal/platform/account"
 )
@@ -181,6 +182,9 @@ func (h *Host) publish(status Status) {
 }
 
 func (h *Host) Run(ctx context.Context) {
+	if netpolicy.Active() {
+		return
+	}
 	defer h.dropControllers()
 	backoff := time.Second
 	for ctx.Err() == nil {

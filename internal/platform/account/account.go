@@ -16,6 +16,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"reasonix/internal/base/netpolicy"
 	"strings"
 	"time"
 
@@ -220,6 +221,9 @@ func (c *Client) do(ctx context.Context, method, path, token string, body, out a
 }
 
 func (c *Client) doLimit(ctx context.Context, method, path, token string, body, out any, limit int64) error {
+	if netpolicy.Active() {
+		return netpolicy.ErrBlocked
+	}
 	var reader io.Reader
 	if body != nil {
 		encoded, err := json.Marshal(body)

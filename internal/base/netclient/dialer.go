@@ -12,6 +12,8 @@ import (
 	"time"
 
 	"golang.org/x/net/proxy"
+
+	"reasonix/internal/base/netpolicy"
 )
 
 // StreamDialer opens a raw TCP stream under the same proxy policy netclient
@@ -39,10 +41,13 @@ func NewStreamDialer(spec ProxySpec) (StreamDialer, error) {
 		return nil, err
 	}
 	base := &net.Dialer{Timeout: 30 * time.Second, KeepAlive: 30 * time.Second}
-	if pf == nil {
-		return DialerFunc(base.DialContext), nil
-	}
 	return DialerFunc(func(ctx context.Context, network, addr string) (net.Conn, error) {
+		if err := netpolicy.CheckAddress(addr); err != nil {
+			return nil, err
+		}
+		if pf == nil {
+			return base.DialContext(ctx, network, addr)
+		}
 		// proxyFunc keys off a request URL; synthesize one for the target so
 		// scheme-agnostic TCP dials reuse the exact NoProxy/DirectHosts logic.
 		host, _, splitErr := net.SplitHostPort(addr)
@@ -57,15 +62,24 @@ func NewStreamDialer(spec ProxySpec) (StreamDialer, error) {
 		if pu == nil {
 			return base.DialContext(ctx, network, addr)
 		}
-		switch strings.ToLower(pu.Scheme) {
-		case "socks5", "socks5h":
-			return dialSOCKS5(ctx, pu, base, network, addr)
-		case "http", "https":
-			return dialHTTPConnect(ctx, pu, base, addr)
-		default:
-			return nil, fmt.Errorf("netclient: unsupported proxy scheme %q for stream dial", pu.Scheme)
-		}
+		return DialProxy(ctx, pu, base, network, addr)
 	}), nil
+}
+
+// DialProxy tunnels addr through the already selected proxy, without another
+// proxy or DNS decision. Callers may supply a vetted IP as the target.
+func DialProxy(ctx context.Context, pu *url.URL, base *net.Dialer, network, addr string) (net.Conn, error) {
+	if netpolicy.Active() && !netpolicy.AllowedHost(pu.Hostname()) {
+		return nil, netpolicy.ErrBlocked
+	}
+	switch strings.ToLower(pu.Scheme) {
+	case "socks5", "socks5h":
+		return dialSOCKS5(ctx, pu, base, network, addr)
+	case "http", "https":
+		return dialHTTPConnect(ctx, pu, base, addr)
+	default:
+		return nil, fmt.Errorf("netclient: unsupported proxy scheme %q for stream dial", pu.Scheme)
+	}
 }
 
 func dialSOCKS5(ctx context.Context, pu *url.URL, fwd *net.Dialer, network, addr string) (net.Conn, error) {

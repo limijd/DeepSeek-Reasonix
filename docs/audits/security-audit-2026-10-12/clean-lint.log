@@ -1,0 +1,5 @@
+golangci-lint run --timeout=5m ./...
+0 issues.
+go run ./tools/repolint
+repolint: clean (2701 baselined findings)
+repolint: complexity 10, css-important 1, css-size 3, essay 3, file-size 52, function-size 48 of budget is no longer used; -update reclaims it

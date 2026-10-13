@@ -31,6 +31,10 @@ type droppedRef struct {
 // page cannot see. A browser tab never reaches here — it holds bytes and no
 // path, which is what POST /attachments is for.
 func (s *Server) drop(w http.ResponseWriter, r *http.Request) {
+	if !s.grants.at(r).localDesktop {
+		refuse(w, http.StatusNotFound, codeDeviceHostOnly, "only the local desktop can import a host path", nil)
+		return
+	}
 	var body struct {
 		Paths []string `json:"paths"`
 	}

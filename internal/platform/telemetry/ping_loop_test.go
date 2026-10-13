@@ -181,7 +181,7 @@ func TestPingHeldByAnotherProcessIsAskedAgainNotAssumedSent(t *testing.T) {
 func TestSuppressedPingSendsNothingButStillDrains(t *testing.T) {
 	home := testenv.TempDir(t)
 	if err := appendPending(home, pendingPayload{
-		Version: "v1.20.0", OS: "linux", Counters: []Counter{{Signal: "turns", Bucket: "count", Count: 1}},
+		Version: "v1.20.0", OS: "linux", Surface: surface.Studio.String(), Counters: []Counter{{Signal: "turns", Bucket: "count", Count: 1}},
 	}); err != nil {
 		t.Fatal(err)
 	}

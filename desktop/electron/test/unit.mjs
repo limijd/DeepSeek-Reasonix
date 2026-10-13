@@ -2107,3 +2107,23 @@ test("rewind notice dismissal survives the desktop preference disk round trip", 
   savePrefs(file, record);
   assert.deepEqual(loadPrefs(file), record);
 });
+
+
+test("normal network and navigation work while upstream services are blocked", () => {
+  const { installNetworkPolicy, networkAllowed } = require("../src/networkpolicy.js");
+  let guard;
+  installNetworkPolicy({ webRequest: { onBeforeRequest: (handler) => { guard = handler; } } });
+  for (const target of ["https://api.deepseek.com/models", "https://github.com/", "http://10.0.0.1:8080/", "http://127.0.0.1:8080/", "about:blank", "data:image/png;base64,AA=="]) {
+    let decision;
+    guard({ url: target }, (value) => { decision = value; });
+    assert.deepEqual(decision, { cancel: false }, target);
+  }
+  for (const target of ["https://reasonix.io/", "https://ID.Reasonix.IO./me", "wss://remote.reasonix.io/", "https://crash.reasonix.io/", "https://dl.reasonix.io/", "not a URL"]) {
+    assert.equal(networkAllowed(target), false, target);
+    let decision;
+    guard({ url: target }, (value) => { decision = value; });
+    assert.deepEqual(decision, { cancel: true }, target);
+  }
+  assert.equal(externalTarget("https://id.reasonix.io/"), null);
+  assert.equal(guestNavigationAllowed("https://dl.reasonix.io/", "http://127.0.0.1:1"), false);
+});

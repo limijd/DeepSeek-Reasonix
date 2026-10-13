@@ -15,6 +15,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"reasonix/internal/base/netpolicy"
 	"regexp"
 	"runtime"
 	"slices"
@@ -211,6 +212,9 @@ func Send(ctx context.Context, report Report, proxy netclient.ProxySpec) error {
 }
 
 func sendWithClient(ctx context.Context, client *http.Client, endpoint string, report Report) error {
+	if netpolicy.Active() {
+		return netpolicy.ErrBlocked
+	}
 	body, err := json.Marshal(sanitizeReport(report))
 	if err != nil {
 		return err

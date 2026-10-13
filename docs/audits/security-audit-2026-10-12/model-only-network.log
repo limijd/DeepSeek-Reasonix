@@ -1,0 +1,4 @@
+PASS: TCP/UDP blocked; proxy GET/CONNECT denied; namespace loopback works
+reasonix dev
+PASS: bare application refused; isolated application starts
+PASS: terminating the launcher reaps proxy and application processes

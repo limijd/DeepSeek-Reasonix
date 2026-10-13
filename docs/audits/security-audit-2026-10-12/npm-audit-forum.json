@@ -1,0 +1,105 @@
+{
+  "advisories": {
+    "1193729": {
+      "findings": [
+        {
+          "version": "4.13.0",
+          "paths": [
+            ".>hono"
+          ],
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1193729,
+      "title": "Hono: Incomplete fix for CVE-2026-39408: `toSSG()` still writes files outside the output directory",
+      "module_name": "hono",
+      "vulnerable_versions": "<4.13.5",
+      "patched_versions": ">=4.13.5",
+      "severity": "moderate",
+      "cwe": "CWE-22",
+      "github_advisory_id": "GHSA-gqvv-2mrq-wpjv",
+      "url": "https://github.com/advisories/GHSA-gqvv-2mrq-wpjv"
+    },
+    "1193730": {
+      "findings": [
+        {
+          "version": "4.13.0",
+          "paths": [
+            ".>hono"
+          ],
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1193730,
+      "title": "Hono: Unbounded dot-notation nesting in `parseBody()` can cause memory exhaustion",
+      "module_name": "hono",
+      "vulnerable_versions": "<4.13.5",
+      "patched_versions": ">=4.13.5",
+      "severity": "moderate",
+      "cwe": "CWE-400",
+      "github_advisory_id": "GHSA-g6gw-c38x-mqfc",
+      "url": "https://github.com/advisories/GHSA-g6gw-c38x-mqfc"
+    },
+    "1193731": {
+      "findings": [
+        {
+          "version": "4.13.0",
+          "paths": [
+            ".>hono"
+          ],
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1193731,
+      "title": "Hono: Query parser reads parameters after the URL fragment, causing cache-key and proxy interpretation differentials",
+      "module_name": "hono",
+      "vulnerable_versions": "<4.13.5",
+      "patched_versions": ">=4.13.5",
+      "severity": "moderate",
+      "cwe": "CWE-444",
+      "github_advisory_id": "GHSA-crvj-82cr-hjcx",
+      "url": "https://github.com/advisories/GHSA-crvj-82cr-hjcx"
+    },
+    "1240640": {
+      "findings": [
+        {
+          "version": "4.13.0",
+          "paths": [
+            ".>hono"
+          ],
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1240640,
+      "title": "hono/jsx renders plain strings unescaped in boundary components, leading to XSS",
+      "module_name": "hono",
+      "vulnerable_versions": "<4.13.7",
+      "patched_versions": ">=4.13.7",
+      "severity": "moderate",
+      "cwe": "CWE-79",
+      "github_advisory_id": "GHSA-hxh3-vqpv-xpqv",
+      "url": "https://github.com/advisories/GHSA-hxh3-vqpv-xpqv"
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 4,
+      "high": 0,
+      "critical": 0
+    },
+    "dependencies": 2,
+    "devDependencies": 0,
+    "optionalDependencies": 0,
+    "totalDependencies": 2
+  }
+}

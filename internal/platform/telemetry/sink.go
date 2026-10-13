@@ -12,6 +12,7 @@ import (
 	"time"
 
 	"reasonix/internal/base/netclient"
+	"reasonix/internal/base/netpolicy"
 	"reasonix/internal/contract/event"
 	"reasonix/internal/contract/provider"
 	"reasonix/internal/contract/surface"
@@ -31,7 +32,9 @@ type Options struct {
 	SuppressPing bool
 	// PingAllowed, when set, is asked before every ping attempt, so a consent
 	// withdrawn while the process runs takes effect on the next one.
-	PingAllowed    func() bool
+	PingAllowed func() bool
+	// MetricsAllowed is re-read before recording and uploading counters.
+	MetricsAllowed func() bool
 	HomeDir        string
 	Interactive    bool
 	Proxy          netclient.ProxySpec
@@ -51,6 +54,10 @@ type Reporter struct {
 }
 
 func Start(opts Options) *Reporter {
+	if netpolicy.Active() {
+		_ = Cleanup(opts.HomeDir)
+		return nil
+	}
 	if !Enabled(opts.Mode, opts.Version, opts.Interactive) {
 		if strings.EqualFold(strings.TrimSpace(opts.Mode), "off") || envOptOut() {
 			_ = Cleanup(opts.HomeDir)
@@ -78,6 +85,7 @@ func Start(opts Options) *Reporter {
 		},
 	}
 	client.allowed = opts.PingAllowed
+	client.metricsConsent = opts.MetricsAllowed
 	ctx := opts.Context
 	if ctx == nil {
 		ctx = context.Background()
@@ -120,6 +128,9 @@ func addMetric(counts map[string]int, signal, bucket string, count int64) {
 
 func (r *Reporter) append(counts map[string]int) {
 	if r == nil || len(counts) == 0 {
+		return
+	}
+	if r.client != nil && !r.client.metricsAllowed() {
 		return
 	}
 	counters := make([]Counter, 0, len(counts))

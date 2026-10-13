@@ -1,0 +1,28 @@
+{"Time":"2026-10-12T12:47:16.408713894-05:00","Action":"start","Package":"reasonix/internal/contract/config"}
+{"Time":"2026-10-12T12:47:16.419522415-05:00","Action":"run","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy"}
+{"Time":"2026-10-12T12:47:16.419547296-05:00","Action":"output","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy","Output":"=== RUN   TestProjectCannotOverrideDesktopPrivacy\n"}
+{"Time":"2026-10-12T12:47:16.419591641-05:00","Action":"run","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/disabled"}
+{"Time":"2026-10-12T12:47:16.419596974-05:00","Action":"output","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/disabled","Output":"=== RUN   TestProjectCannotOverrideDesktopPrivacy/disabled\n"}
+{"Time":"2026-10-12T12:47:16.420884428-05:00","Action":"output","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/disabled","Output":"    desktop_privacy_scope_test.go:18: telemetry=true metrics=true, want false false\n"}
+{"Time":"2026-10-12T12:47:16.420998546-05:00","Action":"output","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/disabled","Output":"--- FAIL: TestProjectCannotOverrideDesktopPrivacy/disabled (0.00s)\n"}
+{"Time":"2026-10-12T12:47:16.421005046-05:00","Action":"fail","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/disabled","Elapsed":0}
+{"Time":"2026-10-12T12:47:16.421012296-05:00","Action":"run","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/enabled"}
+{"Time":"2026-10-12T12:47:16.421015916-05:00","Action":"output","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/enabled","Output":"=== RUN   TestProjectCannotOverrideDesktopPrivacy/enabled\n"}
+{"Time":"2026-10-12T12:47:16.424676749-05:00","Action":"output","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/enabled","Output":"    desktop_privacy_scope_test.go:18: telemetry=false metrics=false, want true true\n"}
+{"Time":"2026-10-12T12:47:16.424907237-05:00","Action":"output","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/enabled","Output":"--- FAIL: TestProjectCannotOverrideDesktopPrivacy/enabled (0.00s)\n"}
+{"Time":"2026-10-12T12:47:16.424924575-05:00","Action":"fail","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/enabled","Elapsed":0}
+{"Time":"2026-10-12T12:47:16.424934986-05:00","Action":"run","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/independent"}
+{"Time":"2026-10-12T12:47:16.424944549-05:00","Action":"output","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/independent","Output":"=== RUN   TestProjectCannotOverrideDesktopPrivacy/independent\n"}
+{"Time":"2026-10-12T12:47:16.426848971-05:00","Action":"output","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/independent","Output":"    desktop_privacy_scope_test.go:18: telemetry=false metrics=true, want true false\n"}
+{"Time":"2026-10-12T12:47:16.427028932-05:00","Action":"output","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/independent","Output":"--- FAIL: TestProjectCannotOverrideDesktopPrivacy/independent (0.00s)\n"}
+{"Time":"2026-10-12T12:47:16.427049199-05:00","Action":"fail","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/independent","Elapsed":0}
+{"Time":"2026-10-12T12:47:16.427060897-05:00","Action":"run","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/defaults"}
+{"Time":"2026-10-12T12:47:16.427068403-05:00","Action":"output","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/defaults","Output":"=== RUN   TestProjectCannotOverrideDesktopPrivacy/defaults\n"}
+{"Time":"2026-10-12T12:47:16.429034335-05:00","Action":"output","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/defaults","Output":"    desktop_privacy_scope_test.go:18: telemetry=false metrics=false, want true true\n"}
+{"Time":"2026-10-12T12:47:16.42922565-05:00","Action":"output","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/defaults","Output":"--- FAIL: TestProjectCannotOverrideDesktopPrivacy/defaults (0.00s)\n"}
+{"Time":"2026-10-12T12:47:16.429249793-05:00","Action":"fail","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy/defaults","Elapsed":0}
+{"Time":"2026-10-12T12:47:16.429263717-05:00","Action":"output","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy","Output":"--- FAIL: TestProjectCannotOverrideDesktopPrivacy (0.01s)\n"}
+{"Time":"2026-10-12T12:47:16.4292751-05:00","Action":"fail","Package":"reasonix/internal/contract/config","Test":"TestProjectCannotOverrideDesktopPrivacy","Elapsed":0.01}
+{"Time":"2026-10-12T12:47:16.429515097-05:00","Action":"output","Package":"reasonix/internal/contract/config","Output":"FAIL\n"}
+{"Time":"2026-10-12T12:47:16.429997984-05:00","Action":"output","Package":"reasonix/internal/contract/config","Output":"FAIL\treasonix/internal/contract/config\t0.021s\n"}
+{"Time":"2026-10-12T12:47:16.430004812-05:00","Action":"fail","Package":"reasonix/internal/contract/config","Elapsed":0.021}

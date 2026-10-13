@@ -15,6 +15,7 @@ import (
 
 	"golang.org/x/net/http/httpproxy"
 
+	"reasonix/internal/base/netpolicy"
 	"reasonix/internal/base/sysproxy"
 )
 
@@ -76,7 +77,11 @@ func Validate(spec ProxySpec) error {
 
 // ProxyFunc returns the per-request proxy resolver for spec.
 func ProxyFunc(spec ProxySpec) (func(*http.Request) (*url.URL, error), error) {
-	return proxyFunc(spec)
+	p, err := proxyFunc(spec)
+	if err == nil && netpolicy.Active() {
+		p = netpolicy.GuardProxy(p)
+	}
+	return p, err
 }
 
 // NewHTTPClient returns an HTTP client with Reasonix proxy settings applied.
@@ -85,7 +90,7 @@ func NewHTTPClient(spec ProxySpec, opts TransportOptions) (*http.Client, error) 
 	if err != nil {
 		return nil, err
 	}
-	return &http.Client{Transport: tr}, nil
+	return &http.Client{Transport: netpolicy.GuardTransport(tr)}, nil
 }
 
 // NewTransport clones net/http's default transport and overlays the requested
@@ -97,7 +102,7 @@ func NewTransport(spec ProxySpec, opts TransportOptions) (*http.Transport, error
 	if err != nil {
 		return nil, err
 	}
-	tr.Proxy = proxy
+	tr.Proxy = netpolicy.GuardProxy(proxy)
 	if opts.DialTimeout != 0 || opts.KeepAlive != 0 || opts.ForceIPv4 {
 		d := &net.Dialer{Timeout: opts.DialTimeout, KeepAlive: opts.KeepAlive}
 		if opts.ForceIPv4 {
@@ -144,7 +149,7 @@ func Summary(spec ProxySpec) string {
 }
 
 func defaultTransport() *http.Transport {
-	if base, ok := http.DefaultTransport.(*http.Transport); ok {
+	if base, ok := netpolicy.BaseTransport(http.DefaultTransport).(*http.Transport); ok {
 		return base.Clone()
 	}
 	return &http.Transport{Proxy: http.ProxyFromEnvironment}

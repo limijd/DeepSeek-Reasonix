@@ -1,0 +1,38 @@
+package serve
+import (
+ "encoding/json"
+ "net/http"
+ "net/url"
+ "os"
+ "path/filepath"
+ "testing"
+ "reasonix/internal/base/testenv"
+ "reasonix/internal/platform/remotecloud"
+)
+func TestAuditRemoteAttachmentReadsOutsideWorkspace(t *testing.T) {
+ t.Setenv("REASONIX_HOME", testenv.TempDir(t))
+ outside := filepath.Join(testenv.TempDir(t), "audit-secret.env")
+ const marker = "AUDIT_DUMMY_SECRET=only-test-data"
+ if err := os.WriteFile(outside, []byte(marker), 0600); err != nil { t.Fatal(err) }
+ h := NewHub(HubOptions{})
+ rt := hubRuntime(t, h, testenv.TempDir(t))
+ base := "/rt/" + rt.ID
+ body, _ := json.Marshal(map[string]string{"path": outside, "name": "copied.txt", "mime": "text/plain"})
+ res, err := h.CloudDesktop(t.Context(), remotecloud.DesktopRequest{Method: "POST", Path: base+"/attachments", Body: body}, "audit-controller")
+ if err != nil || res.Status != http.StatusOK { t.Fatalf("attachment status=%d err=%v body=%s", res.Status, err, res.Body) }
+ var stored struct{ Path string `json:"path"` }
+ if err := json.Unmarshal(res.Body, &stored); err != nil { t.Fatal(err) }
+ read, err := h.CloudDesktop(t.Context(), remotecloud.DesktopRequest{Method: "GET", Path: base+"/workspace/file?path="+url.QueryEscape(stored.Path)}, "audit-controller")
+ var got struct{ Content string `json:"content"` }
+ if err != nil || read.Status != http.StatusOK { t.Fatalf("read status=%d err=%v", read.Status, err) }
+ if err := json.Unmarshal(read.Body, &got); err != nil { t.Fatal(err) }
+ if got.Content != marker { t.Fatalf("content=%q", got.Content) }
+ t.Log("CONFIRMED: cloud device copied an outside file and read its dummy contents without local file approval")
+ dropBody, _ := json.Marshal(map[string]any{"paths": []string{filepath.Dir(outside)}})
+ dropped, err := h.CloudDesktop(t.Context(), remotecloud.DesktopRequest{Method:"POST", Path:base+"/drop", Body:dropBody}, "audit-controller")
+ var refs []droppedRef
+ if err != nil || dropped.Status != http.StatusOK { t.Fatalf("drop status=%d err=%v", dropped.Status, err) }
+ if err := json.Unmarshal(dropped.Body, &refs); err != nil { t.Fatal(err) }
+ if len(refs)!=1 || refs[0].Ref=="" || refs[0].Error!="" { t.Fatalf("refs=%+v", refs) }
+ t.Log("CONFIRMED: cloud device minted a session reference to an outside directory")
+}

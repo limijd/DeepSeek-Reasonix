@@ -5,6 +5,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"testing"
 
@@ -35,4 +36,24 @@ func TestLocalClientIgnoresALayaPackageInTheWorkingDirectory(t *testing.T) {
 
 func pyString(s string) string {
 	return "'" + strings.NewReplacer(`\`, `\\`, `'`, `\'`).Replace(s) + "'"
+}
+
+func TestLocalClientDisablesModelDownloadsAndTelemetry(t *testing.T) {
+	if runtime.GOOS == "windows" {
+		t.Skip("shell helper requires Unix")
+	}
+	for _, name := range []string{"HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE", "HF_HUB_DISABLE_TELEMETRY", "DO_NOT_TRACK"} {
+		t.Setenv(name, "0")
+	}
+	python := filepath.Join(t.TempDir(), "python")
+	script := `#!/bin/sh
+[ "$HF_HUB_OFFLINE" = 1 ] && [ "$TRANSFORMERS_OFFLINE" = 1 ] && [ "$HF_HUB_DISABLE_TELEMETRY" = 1 ] && [ "$DO_NOT_TRACK" = 1 ] || exit 1
+printf '__REASONIX_LAYA_RESULT__{}'
+`
+	if err := os.WriteFile(python, []byte(script), 0700); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := (LocalClient{Python: python}).Evaluate(t.Context(), typesafe.Request{}); err != nil {
+		t.Fatal(err)
+	}
 }

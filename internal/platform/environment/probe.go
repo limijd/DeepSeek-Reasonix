@@ -305,6 +305,7 @@ func runOne(ctx context.Context, command string, opts ProbeOptions) ProbeResult 
 	// full process environment and bypass [secrets] filter_subprocess_env for
 	// probes that declare no extra variables of their own.
 	cmd.Env = append(secrets.ProcessEnv(), probe.Env...)
+	cmd.Env = append(cmd.Env, "GOTOOLCHAIN=local", "NPM_CONFIG_UPDATE_NOTIFIER=false")
 	prepareProbeCommand(cmd)
 	var stdout, stderr bytes.Buffer
 	cmd.Stdout = &stdout

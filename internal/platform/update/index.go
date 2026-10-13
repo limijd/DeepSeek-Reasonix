@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"reasonix/internal/base/netpolicy"
 	"strconv"
 	"strings"
 
@@ -203,6 +204,9 @@ func normalizeVersion(v string) string {
 // fetchJSON names the caller as userAgent, or as the build's client identity
 // when none is given: edge bot protection answers Go's default with 403.
 func fetchJSON(ctx context.Context, c *http.Client, url, userAgent string) ([]byte, error) {
+	if netpolicy.Active() {
+		return nil, netpolicy.ErrBlocked
+	}
 	if c == nil {
 		c = http.DefaultClient
 	}

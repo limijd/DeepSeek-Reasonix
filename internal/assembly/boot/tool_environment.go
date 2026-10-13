@@ -1,6 +1,7 @@
 package boot
 
 import (
+	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -45,7 +46,7 @@ type toolEnvironment struct {
 	evidenceSeal    *agent.EvidenceSeal
 }
 
-func resolveToolEnvironment(opts Options, cfg *config.Config, roots config.Roots, root string, additionalDirs []string, shell sandbox.Shell, stderr io.Writer) toolEnvironment {
+func resolveToolEnvironment(opts Options, cfg *config.Config, roots config.Roots, root string, additionalDirs []string, shell sandbox.Shell, stderr io.Writer) (toolEnvironment, error) {
 	// The protected set masks a directory only if it exists when the sandbox is
 	// built, so the store's directory has to be there before any command runs.
 	if dir := roots.ScheduleDir(); dir != "" {
@@ -88,29 +89,36 @@ func resolveToolEnvironment(opts Options, cfg *config.Config, roots config.Roots
 	if env.bash.Mode == "enforce" && !sandbox.Available() {
 		fmt.Fprintln(stderr, "warning: "+sandbox.UnavailableMessage())
 	}
-	env.routeEgress(cfg, stderr)
+	if err := env.routeEgress(cfg, stderr); err != nil {
+		return env, err
+	}
 	env.search = builtin.ResolveSearch(cfg.Tools.Search.Engine, cfg.Tools.Search.RgPath, stderr)
 	// A rebuild passes the previous controller's manager, so tools and
 	// controller keep one temporary generation.
 	if env.sessionTemp == nil {
 		env.sessionTemp = sessiontemp.New()
 	}
-	return env
+	return env, nil
 }
 
 var _ sandbox.EgressRoute = (*egress.Proxy)(nil)
+
+var errDenyOnlyEgress = errors.New("[sandbox] denied_domains requires a non-empty allowed_domains; deny-only egress policies are not supported")
 
 // routeEgress confines bash's external traffic to [sandbox] allowed_domains.
 // It applies only where network is on and the bash sandbox confines, so the
 // list can narrow what a command reaches and never open what was shut. Where
 // the platform cannot enforce it, it says so instead of implying it holds.
-func (env *toolEnvironment) routeEgress(cfg *config.Config, stderr io.Writer) {
+func (env *toolEnvironment) routeEgress(cfg *config.Config, stderr io.Writer) error {
+	if len(cfg.Sandbox.AllowedDomains) == 0 && len(cfg.Sandbox.DeniedDomains) > 0 {
+		return errDenyOnlyEgress
+	}
 	if len(cfg.Sandbox.AllowedDomains) == 0 || !env.bash.Network || !env.bash.Enforce() || !sandbox.Available() {
-		return
+		return nil
 	}
 	if !sandbox.EgressSupported() {
 		fmt.Fprintln(stderr, "warning: [sandbox] allowed_domains is not enforced on this platform; bash network egress stays open")
-		return
+		return nil
 	}
 	upstream := httpproxy.FromEnvironment().ProxyFunc()
 	p, err := egress.Start(egress.Policy{Allow: cfg.Sandbox.AllowedDomains, Deny: cfg.Sandbox.DeniedDomains}, egress.Options{
@@ -124,11 +132,12 @@ func (env *toolEnvironment) routeEgress(cfg *config.Config, stderr io.Writer) {
 	if err != nil {
 		fmt.Fprintf(stderr, "warning: [sandbox] allowed_domains could not start the egress proxy (%v); bash network egress is shut\n", err)
 		env.bash.Network = false
-		return
+		return nil
 	}
 	env.egress = p
 	env.bash.Egress = p
 	env.bash.ClosedLoopbackPorts = closedLoopbackPorts(cfg.Tools.Shell.Env)
+	return nil
 }
 
 // closedLoopbackPorts unions the proxy ports the host environment names with

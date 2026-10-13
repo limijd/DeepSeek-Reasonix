@@ -5,6 +5,11 @@ import (
 	"fmt"
 	"net"
 	"net/http"
+	"net/url"
+	"time"
+
+	"reasonix/internal/base/netclient"
+	"reasonix/internal/base/netpolicy"
 )
 
 // ssrfGuardClient wraps base so every fetch refuses to connect to private,
@@ -20,22 +25,53 @@ import (
 // the one un-guarded path. Kept in sync by hand — both block the same set.
 func ssrfGuardClient(base *http.Client) *http.Client {
 	guarded := *base // copy Timeout etc.
-	if t, ok := base.Transport.(*http.Transport); ok && t != nil {
+	if t, ok := netpolicy.BaseTransport(base.Transport).(*http.Transport); ok && t != nil {
 		ct := t.Clone()
 		inner := ct.DialContext
 		if inner == nil {
 			inner = (&net.Dialer{}).DialContext
 		}
 		ct.DialContext = ssrfDial(inner)
-		guarded.Transport = ct
+		proxy := ct.Proxy
+		ct.Proxy = nil
+		ct.DialTLSContext = nil
+		guarded.Transport = ssrfTransport{direct: ct, proxy: proxy}
 	} else {
 		// Non-*http.Transport (or nil Transport): build a fresh guarded transport.
 		// The real paths — boot's netclient and the tests' httptest client — are
 		// always *http.Transport, so this branch only covers a bare &http.Client{}.
 		guarded.Transport = &http.Transport{DialContext: ssrfDial((&net.Dialer{}).DialContext)}
 	}
-	return &guarded
+	return netpolicy.GuardClient(&guarded)
 }
+
+type ssrfTransport struct {
+	direct *http.Transport
+	proxy  func(*http.Request) (*url.URL, error)
+}
+
+func (t ssrfTransport) RoundTrip(req *http.Request) (*http.Response, error) {
+	if t.proxy == nil {
+		return t.direct.RoundTrip(req)
+	}
+	pu, err := t.proxy(req)
+	if err != nil {
+		return nil, err
+	}
+	if pu == nil {
+		return t.direct.RoundTrip(req)
+	}
+	tr := t.direct.Clone()
+	tr.DisableKeepAlives = true
+	defer tr.CloseIdleConnections()
+	dialer := &net.Dialer{Timeout: 30 * time.Second}
+	tr.DialContext = ssrfDial(func(ctx context.Context, network, addr string) (net.Conn, error) {
+		return netclient.DialProxy(ctx, pu, dialer, network, addr)
+	})
+	return tr.RoundTrip(req)
+}
+
+var lookupInstallHost = net.DefaultResolver.LookupIPAddr
 
 func ssrfDial(inner func(context.Context, string, string) (net.Conn, error)) func(context.Context, string, string) (net.Conn, error) {
 	return func(ctx context.Context, network, addr string) (net.Conn, error) {
@@ -43,9 +79,12 @@ func ssrfDial(inner func(context.Context, string, string) (net.Conn, error)) fun
 		if err != nil {
 			return nil, err
 		}
-		ips, err := net.DefaultResolver.LookupIPAddr(ctx, host)
+		ips, err := lookupInstallHost(ctx, host)
 		if err != nil {
 			return nil, err
+		}
+		if len(ips) == 0 {
+			return nil, fmt.Errorf("no addresses for %s", host)
 		}
 		for _, ip := range ips {
 			if blockedFetchIP(ip.IP) {

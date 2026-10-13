@@ -1,5 +1,6 @@
 "use strict";
 const { localPath, trimTyped } = require("./localpath");
+const { networkAllowed } = require("./networkpolicy");
 
 // What a page in the agent's browser may become. The agent's own requests pass
 // the kernel's policy first; this is the window's answer for everything else a
@@ -13,7 +14,7 @@ function guestNavigationAllowed(raw, kernelOrigin) {
     return false;
   }
   if (url.origin === kernelOrigin) return false;
-  return url.protocol === "http:" || url.protocol === "https:" || url.href === "about:blank";
+  return networkAllowed(raw) && (url.protocol === "http:" || url.protocol === "https:" || url.href === "about:blank");
 }
 
 // What the person typed, as the address to load and the one to fall back to.

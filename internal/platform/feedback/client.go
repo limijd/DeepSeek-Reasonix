@@ -11,6 +11,7 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"reasonix/internal/base/netpolicy"
 	"strconv"
 	"strings"
 	"time"
@@ -127,6 +128,9 @@ func (s *Service) postReply(ctx context.Context, id, token, receipt, body string
 
 // do performs one request and turns whatever came back into a sentinel.
 func (s *Service) do(req *http.Request, out any) error {
+	if netpolicy.Active() {
+		return netpolicy.ErrBlocked
+	}
 	provider.ApplyClientIdentity(req)
 	resp, err := s.http.Do(req)
 	if err != nil {

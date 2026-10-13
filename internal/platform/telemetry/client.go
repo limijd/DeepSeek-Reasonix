@@ -61,7 +61,8 @@ type Client struct {
 	now   func() time.Time
 	sleep func(context.Context, time.Duration) bool
 	// allowed is asked before every ping attempt; nil allows.
-	allowed func() bool
+	allowed        func() bool
+	metricsConsent func() bool
 }
 
 func newClient(home, version string, from surface.Surface, proxy netclient.ProxySpec) (*Client, error) {
@@ -199,6 +200,9 @@ func (c *Client) prunePingClaims(current string) {
 }
 
 func (c *Client) flushPending(ctx context.Context) error {
+	if !c.metricsAllowed() {
+		return nil
+	}
 	dir := filepath.Join(c.home, pendingDirName)
 	paths, err := claimPendingFiles(dir, time.Now())
 	if err != nil {
@@ -232,6 +236,9 @@ func (c *Client) flushPending(ctx context.Context) error {
 		var p pendingPayload
 		if json.Unmarshal(b, &p) != nil || !validPendingPayload(p) {
 			removeClaim(path, claimed)
+			continue
+		}
+		if queuedSurface(p) != c.reportedSurface() {
 			continue
 		}
 		key := p.Version + "\x00" + p.OS + "\x00" + queuedSurface(p).String()
@@ -351,6 +358,9 @@ func (c *Client) post(ctx context.Context, path string, payload any) error {
 	}
 	req.Header.Set("Content-Type", "application/json")
 	provider.ApplyClientIdentity(req)
+	if path == "/metrics" && !c.metricsAllowed() {
+		return errMetricsDisabled
+	}
 	resp, err := c.http.Do(req)
 	if err != nil {
 		return err

@@ -15,6 +15,7 @@ import (
 	"net/url"
 	"os"
 	"path/filepath"
+	"reasonix/internal/base/netpolicy"
 	"regexp"
 	"runtime"
 	"strings"
@@ -512,6 +513,9 @@ func githubRateLimitHint(resp *http.Response) string {
 // fetchLatestRelease queries the GitHub Releases API and returns the newest
 // strict CLI release in the selected public channel.
 func fetchLatestRelease(c *http.Client, channel cliReleaseChannel) (*ghRelease, error) {
+	if netpolicy.Active() {
+		return nil, netpolicy.ErrBlocked
+	}
 	pointerURL := fmt.Sprintf("%s/%s/latest.json", cliGatewayBase, channel)
 	pointerRelease, pointerErr := fetchCLIReleasePointer(c, pointerURL, channel)
 	if pointerErr == nil {

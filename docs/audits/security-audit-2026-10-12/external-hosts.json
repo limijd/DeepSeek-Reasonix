@@ -1,0 +1,1759 @@
+{
+  "scope": "Historical literal-host inventory, not runtime traffic. Current clean fork disables built-in background service components and blocks reasonix.io and its subdomains plus api.typesafe.ai in shared transports. Other hosts retain original user/tool permissions; allowed here does not authorize background requests. Source line references are from the initial audit.",
+  "hosts": [
+    {
+      "host": "agent.example.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/frontend/cli/serve_frontend.go",
+          "line": 275
+        }
+      ]
+    },
+    {
+      "host": "agentclientprotocol.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/frontend/acp/protocol.go",
+          "line": 1
+        },
+        {
+          "file": "internal/frontend/acp/protocol.go",
+          "line": 205
+        }
+      ]
+    },
+    {
+      "host": "ai-gateway.vercel.sh",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 715
+        }
+      ]
+    },
+    {
+      "host": "api-docs.deepseek.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/pricing/catalog.go",
+          "line": 81
+        }
+      ]
+    },
+    {
+      "host": "api.anthropic.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/model/anthropic/anthropic.go",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "host": "api.deepseek.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": ".github/workflows/e2e-bot.yml",
+          "line": 120
+        },
+        {
+          "file": ".github/workflows/issue-auto-label.yml",
+          "line": 61
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 29
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 32
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 33
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 34
+        },
+        {
+          "file": "desktop/frontend-next/tools/fixture-onboard.js",
+          "line": 35
+        },
+        {
+          "file": "internal/contract/config/deepseek_catalog.go",
+          "line": 40
+        },
+        {
+          "file": "internal/contract/config/deepseek_catalog.go",
+          "line": 48
+        },
+        {
+          "file": "internal/contract/config/deepseek_presets.go",
+          "line": 25
+        },
+        {
+          "file": "internal/contract/config/deepseek_presets.go",
+          "line": 48
+        },
+        {
+          "file": "internal/contract/config/deepseek_presets.go",
+          "line": 53
+        },
+        {
+          "file": "internal/contract/config/deepseek_protocol_migration.go",
+          "line": 19
+        },
+        {
+          "file": "internal/contract/config/load.go",
+          "line": 369
+        },
+        {
+          "file": "internal/contract/config/load.go",
+          "line": 1498
+        },
+        {
+          "file": "internal/contract/config/pricing.go",
+          "line": 158
+        },
+        {
+          "file": "internal/contract/config/provider_entry.go",
+          "line": 41
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 27
+        },
+        {
+          "file": "internal/contract/config/web_search_model.go",
+          "line": 150
+        },
+        {
+          "file": "scripts/backfill-issue-labels.mjs",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "host": "api.github.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/ext/installsource/plan.go",
+          "line": 20
+        },
+        {
+          "file": "internal/frontend/cli/upgrade.go",
+          "line": 35
+        },
+        {
+          "file": "scripts/release-credits.mjs",
+          "line": 157
+        },
+        {
+          "file": "scripts/update-acknowledgments.mjs",
+          "line": 7
+        },
+        {
+          "file": "scripts/update-star-history.mjs",
+          "line": 77
+        },
+        {
+          "file": "workers/crash-report/src/desktop_release.ts",
+          "line": 2
+        },
+        {
+          "file": "workers/crash-report/src/desktop_release.ts",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "host": "api.gmi-serving.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 700
+        }
+      ]
+    },
+    {
+      "host": "api.kilo.ai",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 760
+        }
+      ]
+    },
+    {
+      "host": "api.kimi.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 298
+        }
+      ]
+    },
+    {
+      "host": "api.longcat.chat",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 41
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 25
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 26
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 198
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 218
+        }
+      ]
+    },
+    {
+      "host": "api.minimax.io",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 334
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 368
+        }
+      ]
+    },
+    {
+      "host": "api.minimaxi.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 317
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 351
+        }
+      ]
+    },
+    {
+      "host": "api.moonshot.ai",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 277
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 282
+        }
+      ]
+    },
+    {
+      "host": "api.moonshot.cn",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/ui/AddProvider.tsx",
+          "line": 244
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 38
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 256
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 261
+        }
+      ]
+    },
+    {
+      "host": "api.novita.ai",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 686
+        }
+      ]
+    },
+    {
+      "host": "api.openai.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/global_presets.go",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "host": "api.resend.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "workers/accounts/src/email/resend.ts",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "host": "api.siliconflow.cn",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "host": "api.stepfun.ai",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/load.go",
+          "line": 1022
+        },
+        {
+          "file": "internal/contract/config/load.go",
+          "line": 1024
+        }
+      ]
+    },
+    {
+      "host": "api.stepfun.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/load.go",
+          "line": 1023
+        },
+        {
+          "file": "internal/contract/config/load.go",
+          "line": 1025
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 653
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 669
+        }
+      ]
+    },
+    {
+      "host": "api.typesafe.ai",
+      "policy": "blocked",
+      "references": [
+        {
+          "file": "internal/contract/config/systemone_migrate.go",
+          "line": 8
+        },
+        {
+          "file": "internal/safety/typesafe/client.go",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "host": "api.xiaomimimo.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 40
+        },
+        {
+          "file": "internal/contract/config/load.go",
+          "line": 1303
+        },
+        {
+          "file": "internal/contract/config/provider_presets_mimo.go",
+          "line": 28
+        },
+        {
+          "file": "internal/contract/config/provider_presets_mimo.go",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "host": "api.z.ai",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 401
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 451
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 466
+        }
+      ]
+    },
+    {
+      "host": "ark.cn-beijing.volces.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/global_presets.go",
+          "line": 93
+        }
+      ]
+    },
+    {
+      "host": "bigmodel.cn",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "host": "camo.githubusercontent.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 34
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "host": "cloud.siliconflow.cn",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "host": "code.claude.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/ext/hook/hook.go",
+          "line": 86
+        },
+        {
+          "file": "internal/ext/hook/hook.go",
+          "line": 486
+        },
+        {
+          "file": "internal/ext/hook/hook.go",
+          "line": 892
+        },
+        {
+          "file": "internal/ext/pluginpkg/claude_compat.go",
+          "line": 54
+        },
+        {
+          "file": "internal/ext/pluginpkg/claude_compat.go",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "host": "coding-intl.dashscope.aliyuncs.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 618
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 635
+        }
+      ]
+    },
+    {
+      "host": "coding.dashscope.aliyuncs.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 581
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 599
+        }
+      ]
+    },
+    {
+      "host": "crash.reasonix.io",
+      "policy": "blocked",
+      "references": [
+        {
+          "file": "internal/frontend/cli/upgrade.go",
+          "line": 37
+        },
+        {
+          "file": "internal/platform/crashreport/cli.go",
+          "line": 42
+        },
+        {
+          "file": "internal/platform/feedback/service.go",
+          "line": 24
+        },
+        {
+          "file": "internal/platform/telemetry/client.go",
+          "line": 24
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 14
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 24
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 29
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 33
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 34
+        },
+        {
+          "file": "scripts/feedback-sync.mjs",
+          "line": 17
+        },
+        {
+          "file": "workers/crash-report/src/desktop_release.ts",
+          "line": 400
+        },
+        {
+          "file": "workers/crash-report/src/index.ts",
+          "line": 1354
+        }
+      ]
+    },
+    {
+      "host": "dashscope-intl.aliyuncs.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 564
+        }
+      ]
+    },
+    {
+      "host": "dashscope.aliyuncs.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 546
+        }
+      ]
+    },
+    {
+      "host": "discord.gg",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": ".github/ISSUE_TEMPLATE/config.yml",
+          "line": 10
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/communityLinks.ts",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "host": "dl.reasonix.io",
+      "policy": "blocked",
+      "references": [
+        {
+          "file": ".github/workflows/release-studio.yml",
+          "line": 1257
+        },
+        {
+          "file": "internal/platform/update/manifest.go",
+          "line": 35
+        },
+        {
+          "file": "scripts/backfill-studio-notes.sh",
+          "line": 28
+        },
+        {
+          "file": "scripts/update-versions-index.sh",
+          "line": 39
+        },
+        {
+          "file": "scripts/update-versions-index.sh",
+          "line": 41
+        },
+        {
+          "file": "scripts/update-versions-index.sh",
+          "line": 91
+        },
+        {
+          "file": "scripts/validate-desktop-release-manifest.sh",
+          "line": 56
+        },
+        {
+          "file": "scripts/validate-desktop-release-manifest.sh",
+          "line": 57
+        },
+        {
+          "file": "workers/crash-report/src/desktop_release.ts",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "host": "docs.z.ai",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/effort.go",
+          "line": 539
+        },
+        {
+          "file": "internal/contract/provider/zhipu_effort.go",
+          "line": 7
+        },
+        {
+          "file": "internal/model/openai/glm_effort.go",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "host": "evil.example",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 6
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 6
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 19
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 33
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 33
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 34
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 34
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 40
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 40
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 40
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 42
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 42
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 42
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 43
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 43
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 43
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 48
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 48
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 49
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 49
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 50
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 50
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 54
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 54
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 55
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 55
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 56
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 56
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 60
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 60
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 61
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 61
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 62
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 62
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 66
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 66
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 67
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 67
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 68
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 68
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 72
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 72
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 73
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 73
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 74
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 74
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 81
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 81
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 84
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 84
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 85
+        },
+        {
+          "file": "scripts/feedback-sync.fixture.json",
+          "line": 85
+        }
+      ]
+    },
+    {
+      "host": "example.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/ui/AddProvider.tsx",
+          "line": 344
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/EditConn.tsx",
+          "line": 488
+        },
+        {
+          "file": "internal/ext/mcpsetup/argv.go",
+          "line": 16
+        },
+        {
+          "file": "internal/frontend/cli/mcp.go",
+          "line": 508
+        }
+      ]
+    },
+    {
+      "host": "files.certum.eu",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": ".github/actions/setup-certum/action.yml",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "host": "generativelanguage.googleapis.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/global_presets.go",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "host": "github.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": ".github/ISSUE_TEMPLATE/bug_report.yml",
+          "line": 11
+        },
+        {
+          "file": ".github/ISSUE_TEMPLATE/config.yml",
+          "line": 4
+        },
+        {
+          "file": ".github/ISSUE_TEMPLATE/config.yml",
+          "line": 7
+        },
+        {
+          "file": ".github/workflows/release-studio.yml",
+          "line": 1429
+        },
+        {
+          "file": "cmd/signpath-contract/main.go",
+          "line": 22
+        },
+        {
+          "file": "desktop/cmd/sign/main.go",
+          "line": 222
+        },
+        {
+          "file": "desktop/cmd/studio-manifest/main.go",
+          "line": 48
+        },
+        {
+          "file": "desktop/cmd/studio-manifest/main.go",
+          "line": 127
+        },
+        {
+          "file": "desktop/electron/package.json",
+          "line": 6
+        },
+        {
+          "file": "desktop/frontend-next/src/i18n/en_settings.ts",
+          "line": 979
+        },
+        {
+          "file": "desktop/frontend-next/src/i18n/en_settings.ts",
+          "line": 979
+        },
+        {
+          "file": "desktop/frontend-next/src/port/feedback.ts",
+          "line": 173
+        },
+        {
+          "file": "desktop/frontend-next/src/port/fixture.ts",
+          "line": 189
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/AddPlugin.tsx",
+          "line": 10
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/FeedbackForm.tsx",
+          "line": 15
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/MarketPublish.tsx",
+          "line": 12
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/MarketPublish.tsx",
+          "line": 163
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/communityLinks.ts",
+          "line": 1
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/communityLinks.ts",
+          "line": 10
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/communityLinks.ts",
+          "line": 21
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/versionFailure.ts",
+          "line": 56
+        },
+        {
+          "file": "internal/base/i18n/messages_en.go",
+          "line": 749
+        },
+        {
+          "file": "internal/base/i18n/messages_zh.go",
+          "line": 749
+        },
+        {
+          "file": "internal/base/i18n/messages_zh_tw.go",
+          "line": 671
+        },
+        {
+          "file": "internal/ext/installsource/plan.go",
+          "line": 26
+        },
+        {
+          "file": "internal/ext/installsource/plugin_package.go",
+          "line": 189
+        },
+        {
+          "file": "internal/ext/installsource/plugin_package.go",
+          "line": 503
+        },
+        {
+          "file": "internal/ext/installsource/plugin_package.go",
+          "line": 532
+        },
+        {
+          "file": "internal/ext/market/install.go",
+          "line": 258
+        },
+        {
+          "file": "internal/ext/market/install.go",
+          "line": 268
+        },
+        {
+          "file": "internal/frontend/cli/upgrade.go",
+          "line": 36
+        },
+        {
+          "file": "internal/platform/releaseasset/cli.go",
+          "line": 28
+        },
+        {
+          "file": "npm/build.mjs",
+          "line": 79
+        },
+        {
+          "file": "npm/reasonix/bin/reasonix.js",
+          "line": 14
+        },
+        {
+          "file": "npm/reasonix/package.json",
+          "line": 15
+        },
+        {
+          "file": "npm/reasonix/package.json",
+          "line": 18
+        },
+        {
+          "file": "npm/reasonix/package.json",
+          "line": 21
+        },
+        {
+          "file": "scripts/decide-cli-release-publication.sh",
+          "line": 77
+        },
+        {
+          "file": "scripts/decide-cli-release-publication.sh",
+          "line": 86
+        },
+        {
+          "file": "scripts/publish-cli-pointer.sh",
+          "line": 106
+        },
+        {
+          "file": "scripts/render-brew-cask.sh",
+          "line": 8
+        },
+        {
+          "file": "scripts/render-brew-cask.sh",
+          "line": 59
+        },
+        {
+          "file": "scripts/validate-cli-release-manifest.sh",
+          "line": 92
+        },
+        {
+          "file": "scripts/validate-cli-release-manifest.sh",
+          "line": 105
+        },
+        {
+          "file": "scripts/validate-desktop-release-manifest.sh",
+          "line": 55
+        },
+        {
+          "file": "workers/crash-report/src/desktop_release.ts",
+          "line": 175
+        },
+        {
+          "file": "workers/crash-report/src/desktop_release.ts",
+          "line": 239
+        },
+        {
+          "file": "workers/crash-report/src/desktop_release.ts",
+          "line": 352
+        },
+        {
+          "file": "workers/crash-report/src/registry/lib/validation.ts",
+          "line": 80
+        },
+        {
+          "file": "workers/crash-report/src/registry/lib/validation.ts",
+          "line": 157
+        },
+        {
+          "file": "workers/crash-report/src/registry/lib/validation.ts",
+          "line": 199
+        }
+      ]
+    },
+    {
+      "host": "id-cache.reasonix.io",
+      "policy": "blocked",
+      "references": [
+        {
+          "file": "workers/crash-report/src/auth.ts",
+          "line": 64
+        }
+      ]
+    },
+    {
+      "host": "id.reasonix.io",
+      "policy": "blocked",
+      "references": [
+        {
+          "file": "desktop/frontend-next/index.html",
+          "line": 6
+        },
+        {
+          "file": "desktop/frontend-next/index.html",
+          "line": 67
+        },
+        {
+          "file": "desktop/frontend-next/src/port/cloud_remote.ts",
+          "line": 8
+        },
+        {
+          "file": "internal/platform/account/account.go",
+          "line": 26
+        },
+        {
+          "file": "workers/accounts/wrangler.toml",
+          "line": 19
+        },
+        {
+          "file": "workers/crash-report/src/auth.ts",
+          "line": 28
+        },
+        {
+          "file": "workers/crash-report/src/index.ts",
+          "line": 1150
+        },
+        {
+          "file": "workers/crash-report/wrangler.toml",
+          "line": 26
+        },
+        {
+          "file": "workers/forum/wrangler.toml",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "host": "integrate.api.nvidia.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 746
+        }
+      ]
+    },
+    {
+      "host": "json-schema.org",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/provider/schema_dialect.go",
+          "line": 147
+        },
+        {
+          "file": "internal/ext/extension/protocol/schema.generated.json",
+          "line": 1
+        },
+        {
+          "file": "internal/ext/extension/protocol/schema.go",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "host": "longcat.chat",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 41
+        },
+        {
+          "file": "internal/contract/pricing/catalog.go",
+          "line": 82
+        },
+        {
+          "file": "internal/contract/pricing/catalog.go",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "host": "mcp.example.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/ui/AddServer.tsx",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "host": "mcp.stripe.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/render.go",
+          "line": 361
+        },
+        {
+          "file": "internal/frontend/cli/mcp.go",
+          "line": 528
+        }
+      ]
+    },
+    {
+      "host": "mimo.mi.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/pricing/catalog.go",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "host": "ollama.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 774
+        }
+      ]
+    },
+    {
+      "host": "open.bigmodel.cn",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 39
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 385
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 417
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 433
+        }
+      ]
+    },
+    {
+      "host": "opencode.ai",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 483
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 530
+        },
+        {
+          "file": "internal/contract/config/provider_presets_opencode_go.go",
+          "line": 11
+        },
+        {
+          "file": "internal/contract/config/provider_presets_opencode_go.go",
+          "line": 29
+        },
+        {
+          "file": "internal/contract/config/provider_presets_opencode_go.go",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "host": "openrouter.ai",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/global_presets.go",
+          "line": 39
+        },
+        {
+          "file": "internal/contract/config/global_presets.go",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "host": "paypal.me",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/ui/communityLinks.ts",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "host": "platform.deepseek.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "host": "platform.moonshot.cn",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 38
+        },
+        {
+          "file": "internal/model/billing/shape.go",
+          "line": 73
+        }
+      ]
+    },
+    {
+      "host": "platform.xiaomi.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/port/fixture.ts",
+          "line": 191
+        }
+      ]
+    },
+    {
+      "host": "platform.xiaomimimo.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+          "line": 40
+        },
+        {
+          "file": "internal/contract/pricing/catalog.go",
+          "line": 85
+        }
+      ]
+    },
+    {
+      "host": "proxy.example.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/model/anthropic/anthropic.go",
+          "line": 79
+        },
+        {
+          "file": "internal/model/anthropic/anthropic.go",
+          "line": 83
+        },
+        {
+          "file": "internal/model/anthropic/anthropic.go",
+          "line": 85
+        }
+      ]
+    },
+    {
+      "host": "pypi.org",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/ext/plugin/launcher_lock.go",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "host": "qm.qq.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": ".github/ISSUE_TEMPLATE/config.yml",
+          "line": 13
+        },
+        {
+          "file": "desktop/frontend-next/src/ui/communityLinks.ts",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "host": "raw.githubusercontent.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/ext/installsource/names.go",
+          "line": 86
+        },
+        {
+          "file": "internal/ext/installsource/names.go",
+          "line": 89
+        },
+        {
+          "file": "internal/ext/installsource/plan.go",
+          "line": 132
+        }
+      ]
+    },
+    {
+      "host": "reasonix-crash-report.reasonix.workers.dev",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": ".github/workflows/feedback-sync.yml",
+          "line": 66
+        }
+      ]
+    },
+    {
+      "host": "reasonix.io",
+      "policy": "blocked",
+      "references": [
+        {
+          "file": ".github/workflows/deploy-web-studio.yml",
+          "line": 42
+        },
+        {
+          "file": "desktop/cmd/sign/main.go",
+          "line": 198
+        },
+        {
+          "file": "desktop/cmd/sign/main.go",
+          "line": 199
+        },
+        {
+          "file": "desktop/frontend-next/src/port/cloud_remote.ts",
+          "line": 10
+        },
+        {
+          "file": "desktop/frontend-next/src/port/fixture.ts",
+          "line": 193
+        },
+        {
+          "file": "internal/contract/config/global_presets.go",
+          "line": 24
+        },
+        {
+          "file": "internal/frontend/serve/device_share.go",
+          "line": 250
+        },
+        {
+          "file": "scripts/validate-cli-release-manifest.sh",
+          "line": 95
+        },
+        {
+          "file": "scripts/validate-cli-release-manifest.sh",
+          "line": 96
+        },
+        {
+          "file": "scripts/validate-desktop-release-manifest.sh",
+          "line": 85
+        },
+        {
+          "file": "scripts/validate-desktop-release-manifest.sh",
+          "line": 87
+        },
+        {
+          "file": "scripts/validate-desktop-release-manifest.sh",
+          "line": 88
+        },
+        {
+          "file": "workers/accounts/wrangler.toml",
+          "line": 16
+        },
+        {
+          "file": "workers/crash-report/src/auth.ts",
+          "line": 32
+        },
+        {
+          "file": "workers/crash-report/src/auth_pages.ts",
+          "line": 16
+        },
+        {
+          "file": "workers/crash-report/src/desktop_release.ts",
+          "line": 5
+        },
+        {
+          "file": "workers/crash-report/src/index.ts",
+          "line": 1151
+        },
+        {
+          "file": "workers/crash-report/src/shell.ts",
+          "line": 298
+        },
+        {
+          "file": "workers/crash-report/src/shell.ts",
+          "line": 298
+        },
+        {
+          "file": "workers/crash-report/wrangler.toml",
+          "line": 27
+        },
+        {
+          "file": "workers/forum/wrangler.toml",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "host": "reasonix.local",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/frontend/cli/tui_command.go",
+          "line": 27
+        },
+        {
+          "file": "internal/frontend/tui/client.go",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "host": "registry.modelcontextprotocol.io",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/ext/mcpregistry/registry.go",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "host": "registry.npmjs.org",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": ".github/workflows/release-studio.yml",
+          "line": 1410
+        }
+      ]
+    },
+    {
+      "host": "remote.reasonix.io",
+      "policy": "blocked",
+      "references": [
+        {
+          "file": "desktop/frontend-next/index.html",
+          "line": 7
+        },
+        {
+          "file": "desktop/frontend-next/src/port/cloud_remote.ts",
+          "line": 9
+        },
+        {
+          "file": "internal/platform/remotecloud/host.go",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "host": "router.huggingface.co",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 732
+        }
+      ]
+    },
+    {
+      "host": "sourceforge.net",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "scripts/install-nsis.ps1",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "host": "timestamp.certum.pl",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "scripts/sign-certum.ps1",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "host": "token-plan-ams.xiaomimimo.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets_mimo.go",
+          "line": 137
+        },
+        {
+          "file": "internal/contract/config/provider_presets_mimo.go",
+          "line": 154
+        }
+      ]
+    },
+    {
+      "host": "token-plan-cn.xiaomimimo.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/load.go",
+          "line": 1317
+        },
+        {
+          "file": "internal/contract/config/load.go",
+          "line": 1327
+        },
+        {
+          "file": "internal/contract/config/load.go",
+          "line": 1329
+        },
+        {
+          "file": "internal/contract/config/provider_presets_mimo.go",
+          "line": 65
+        },
+        {
+          "file": "internal/contract/config/provider_presets_mimo.go",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "host": "token-plan-sgp.xiaomimimo.com",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets_mimo.go",
+          "line": 102
+        },
+        {
+          "file": "internal/contract/config/provider_presets_mimo.go",
+          "line": 119
+        }
+      ]
+    },
+    {
+      "host": "tokenrhythm.studio",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 238
+        },
+        {
+          "file": "internal/contract/config/provider_presets.go",
+          "line": 239
+        }
+      ]
+    },
+    {
+      "host": "url",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "internal/contract/config/mcpjson.go",
+          "line": 213
+        },
+        {
+          "file": "internal/contract/config/mcpjson.go",
+          "line": 213
+        }
+      ]
+    },
+    {
+      "host": "www.w3.org",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/index.html",
+          "line": 111
+        },
+        {
+          "file": "desktop/frontend-next/src/boot/shards.ts",
+          "line": 1
+        },
+        {
+          "file": "internal/frontend/serve/qrcode.go",
+          "line": 22
+        },
+        {
+          "file": "scripts/update-star-history.mjs",
+          "line": 223
+        }
+      ]
+    },
+    {
+      "host": "your-host",
+      "policy": "original_permissions",
+      "references": [
+        {
+          "file": "desktop/frontend-next/src/i18n/en_settings.ts",
+          "line": 569
+        }
+      ]
+    }
+  ]
+}

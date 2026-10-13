@@ -15,6 +15,7 @@ type userGlobals struct {
 	storage                                   map[string]string
 	serve                                     ServeConfig
 	desktopLanguage, currency, billingDisplay string
+	desktopTelemetry, desktopMetrics          *bool
 	telemetry                                 TelemetryConfig
 	statusline                                StatuslineConfig
 	progressWatch                             ProgressWatchConfig
@@ -27,6 +28,7 @@ func holdUserGlobals(c *Config) userGlobals {
 		cli: c.CLI, secrets: c.Secrets,
 		remote: c.Remote.Clone(), storage: maps.Clone(c.Storage), serve: c.Serve,
 		desktopLanguage: c.Desktop.Language, currency: c.Desktop.Currency, billingDisplay: c.Billing.DisplayCurrency,
+		desktopTelemetry: cloneDesktopConsent(c.Desktop.Telemetry), desktopMetrics: cloneDesktopConsent(c.Desktop.Metrics),
 		telemetry: c.Telemetry, statusline: c.Statusline, progressWatch: c.ProgressWatch, autoArchive: c.AutoArchive, commandMode: c.UI.CommandMode,
 	}
 }
@@ -38,8 +40,17 @@ func (g userGlobals) restore(c *Config) {
 	c.CLI, c.Secrets = g.cli, g.secrets
 	c.Remote, c.Storage, c.Serve = g.remote, g.storage, g.serve
 	c.Desktop.Language, c.Desktop.Currency, c.Billing.DisplayCurrency = g.desktopLanguage, g.currency, g.billingDisplay
+	c.Desktop.Telemetry, c.Desktop.Metrics = g.desktopTelemetry, g.desktopMetrics
 	c.Telemetry, c.Statusline, c.ProgressWatch, c.UI.CommandMode = g.telemetry, g.statusline, g.progressWatch, g.commandMode
 	c.AutoArchive = g.autoArchive
+}
+
+func cloneDesktopConsent(value *bool) *bool {
+	if value == nil {
+		return nil
+	}
+	copy := *value
+	return &copy
 }
 
 // mergeProjectTOML merges the workspace's reasonix.toml over cfg and restores

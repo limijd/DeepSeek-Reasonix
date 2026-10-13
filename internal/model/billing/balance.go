@@ -13,6 +13,7 @@ import (
 	"io"
 	"maps"
 	"net/http"
+	"reasonix/internal/base/netpolicy"
 	"slices"
 	"strconv"
 	"strings"
@@ -116,6 +117,9 @@ func Fetch(ctx context.Context, url, apiKey string) (*Balance, error) {
 // FetchWithClient queries the balance endpoint using the caller-provided client.
 // A nil client falls back to the package default.
 func FetchWithClient(ctx context.Context, client *http.Client, url, apiKey string) (*Balance, error) {
+	if netpolicy.Active() {
+		return nil, nil
+	}
 	if strings.TrimSpace(url) == "" {
 		return nil, nil
 	}

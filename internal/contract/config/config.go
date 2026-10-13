@@ -10,6 +10,7 @@ import (
 	"net/url"
 	"os"
 	"path/filepath"
+	"reasonix/internal/base/netpolicy"
 	"slices"
 	"strings"
 
@@ -165,6 +166,9 @@ func (c *Config) CLITelemetryConfigured() bool {
 
 // CLITelemetryMode returns the normalized CLI telemetry policy.
 func (c *Config) CLITelemetryMode() string {
+	if netpolicy.Active() {
+		return "off"
+	}
 	if c == nil {
 		return "auto"
 	}
@@ -534,6 +538,9 @@ func normalizeDesktopStatusBarItems(items []string) []string {
 // DesktopCheckUpdates reports whether the desktop should check for updates on
 // startup. Missing configs default to true so existing users keep update notices.
 func (c *Config) DesktopCheckUpdates() bool {
+	if netpolicy.Active() {
+		return false
+	}
 	if c == nil || c.Desktop.CheckUpdates == nil {
 		return true
 	}
@@ -630,6 +637,9 @@ func NormalizeReasoningLanguage(lang string) string {
 // DesktopTelemetry reports whether the desktop sends the anonymous daily ping.
 // It carries no conversation, key, or file data — see desktop/README.md.
 func (c *Config) DesktopTelemetry() bool {
+	if netpolicy.Active() {
+		return false
+	}
 	if c == nil || c.Desktop.Telemetry == nil {
 		return true
 	}
@@ -639,6 +649,9 @@ func (c *Config) DesktopTelemetry() bool {
 // DesktopMetrics reports whether the desktop sends aggregate desktop metrics —
 // anonymous (signal, bucket) counters, never content. Default on.
 func (c *Config) DesktopMetrics() bool {
+	if netpolicy.Active() {
+		return false
+	}
 	if c == nil || c.Desktop.Metrics == nil {
 		return true
 	}

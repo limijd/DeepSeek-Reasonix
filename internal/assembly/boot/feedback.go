@@ -1,6 +1,7 @@
 package boot
 
 import (
+	"reasonix/internal/base/netpolicy"
 	"strings"
 
 	"reasonix/internal/base/netclient"
@@ -13,6 +14,9 @@ import (
 // leaves the controller without it, which refuses feedback rather than failing
 // the session.
 func feedbackService(home string, proxy netclient.ProxySpec) *feedback.Service {
+	if netpolicy.Active() {
+		return nil
+	}
 	svc, err := feedback.New(feedback.Config{Home: home, Proxy: proxy})
 	if err != nil {
 		return nil

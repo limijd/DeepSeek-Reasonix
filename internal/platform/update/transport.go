@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"reasonix/internal/base/netpolicy"
 	"time"
 )
 
@@ -157,6 +158,9 @@ func (t Transport) clientFor(attempt int) *http.Client {
 }
 
 func (t Transport) request(ctx context.Context, url string) (*http.Request, error) {
+	if netpolicy.Active() {
+		return nil, netpolicy.ErrBlocked
+	}
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {
 		return nil, err

@@ -1,0 +1,89 @@
+=== RUN   TestBwrapGitMetadataArgsPinDirectoriesThenMountReadOnly
+--- PASS: TestBwrapGitMetadataArgsPinDirectoriesThenMountReadOnly (0.03s)
+=== RUN   TestBwrapGitMetadataArgsStayBoundedWithManySubmodules
+--- PASS: TestBwrapGitMetadataArgsStayBoundedWithManySubmodules (0.13s)
+=== RUN   TestSeatbeltCoversSubmoduleGitDirsByPattern
+    git_metadata_sandbox_test.go:232: patterns are the Seatbelt backend's
+--- SKIP: TestSeatbeltCoversSubmoduleGitDirsByPattern (0.01s)
+=== RUN   TestSeatbeltDeniesSwappingASymlinkOnThePointerPath
+    git_metadata_sandbox_test.go:265: a mount cannot pin a symlink; the host pins GIT_DIR instead
+--- SKIP: TestSeatbeltDeniesSwappingASymlinkOnThePointerPath (0.00s)
+=== RUN   TestCommandNonEnforce
+--- PASS: TestCommandNonEnforce (0.00s)
+=== RUN   TestCommandEmptyMode
+--- PASS: TestCommandEmptyMode (0.00s)
+=== RUN   TestCommandPowerShell
+--- PASS: TestCommandPowerShell (0.00s)
+=== RUN   TestCommandNonDarwin
+--- PASS: TestCommandNonDarwin (0.00s)
+=== RUN   TestCommandDarwinEnforce
+    sandbox_test.go:298: darwin-only test
+--- SKIP: TestCommandDarwinEnforce (0.00s)
+=== RUN   TestCommandDarwinNonEnforce
+    sandbox_test.go:318: darwin-only test
+--- SKIP: TestCommandDarwinNonEnforce (0.00s)
+=== RUN   TestBwrapEgressConfinesToTheBridge
+    seatbelt_egress_linux_test.go:46: tcp 127.0.0.1:37583: exit status 3
+    seatbelt_egress_linux_test.go:46: tcp 1.1.1.1:443: exit status 3
+--- PASS: TestBwrapEgressConfinesToTheBridge (0.05s)
+=== RUN   TestBwrapEgressWithoutASocketKeepsTheNamespace
+--- PASS: TestBwrapEgressWithoutASocketKeepsTheNamespace (0.00s)
+=== RUN   TestBwrapExecutableMountArgsRevealsOnlyExactTemporaryExecutable
+--- PASS: TestBwrapExecutableMountArgsRevealsOnlyExactTemporaryExecutable (0.00s)
+=== RUN   TestBwrapExecutableMountArgsLeavesVisibleExecutableAlone
+--- PASS: TestBwrapExecutableMountArgsLeavesVisibleExecutableAlone (0.00s)
+=== RUN   TestBwrapArgsForArgsMountsTemporaryExecutableAfterMasks
+--- PASS: TestBwrapArgsForArgsMountsTemporaryExecutableAfterMasks (0.00s)
+=== RUN   TestBwrapArgsBindsSessionTempAtTmp
+--- PASS: TestBwrapArgsBindsSessionTempAtTmp (0.00s)
+=== RUN   TestBwrapArgsWithoutSessionTempKeepsTmpfs
+--- PASS: TestBwrapArgsWithoutSessionTempKeepsTmpfs (0.00s)
+=== RUN   TestBwrapForbidReadArgsMasksFilesAndDirectories
+--- PASS: TestBwrapForbidReadArgsMasksFilesAndDirectories (0.00s)
+=== RUN   TestBwrapMasksAForbiddenDirectoryInsideAWriteRootAfterTheBind
+--- PASS: TestBwrapMasksAForbiddenDirectoryInsideAWriteRootAfterTheBind (0.00s)
+=== RUN   TestBwrapForbiddenDirectoryDoesNotTakeWrites
+--- PASS: TestBwrapForbiddenDirectoryDoesNotTakeWrites (0.01s)
+=== RUN   TestBwrapBindsOnlyOutermostExistingResolvedRoots
+--- PASS: TestBwrapBindsOnlyOutermostExistingResolvedRoots (0.00s)
+PASS
+ok  	reasonix/internal/safety/sandbox	0.224s
+=== RUN   TestCredentialReadDeniedByOSSandbox
+=== RUN   TestCredentialReadDeniedByOSSandbox/cat
+=== RUN   TestCredentialReadDeniedByOSSandbox/shell_redirect
+=== RUN   TestCredentialReadDeniedByOSSandbox/copy_into_workspace
+=== RUN   TestCredentialReadDeniedByOSSandbox/tar
+=== RUN   TestCredentialReadDeniedByOSSandbox/awk
+--- PASS: TestCredentialReadDeniedByOSSandbox (0.13s)
+    --- PASS: TestCredentialReadDeniedByOSSandbox/cat (0.01s)
+    --- PASS: TestCredentialReadDeniedByOSSandbox/shell_redirect (0.01s)
+    --- PASS: TestCredentialReadDeniedByOSSandbox/copy_into_workspace (0.02s)
+    --- PASS: TestCredentialReadDeniedByOSSandbox/tar (0.05s)
+    --- PASS: TestCredentialReadDeniedByOSSandbox/awk (0.02s)
+=== RUN   TestCredentialReadDeniedToInterpreters
+=== RUN   TestCredentialReadDeniedToInterpreters/python3
+=== RUN   TestCredentialReadDeniedToInterpreters/perl
+--- PASS: TestCredentialReadDeniedToInterpreters (0.31s)
+    --- PASS: TestCredentialReadDeniedToInterpreters/python3 (0.27s)
+    --- PASS: TestCredentialReadDeniedToInterpreters/perl (0.01s)
+=== RUN   TestCredentialNeverReachesNetwork
+    credential_read_test.go:183: no exfil request reached the listener ("curl: option --data-binary: error encountered when reading a file\ncurl: try 'curl --help' or 'curl --manual' for more information\n rc=26") — the read failed early
+--- PASS: TestCredentialNeverReachesNetwork (0.04s)
+=== RUN   TestOrdinaryDevWorkIsUnaffected
+=== RUN   TestOrdinaryDevWorkIsUnaffected/workspace_read
+=== RUN   TestOrdinaryDevWorkIsUnaffected/ssh_public_key
+=== RUN   TestOrdinaryDevWorkIsUnaffected/ssh_known_hosts
+=== RUN   TestOrdinaryDevWorkIsUnaffected/workspace_write
+--- PASS: TestOrdinaryDevWorkIsUnaffected (0.12s)
+    --- PASS: TestOrdinaryDevWorkIsUnaffected/workspace_read (0.02s)
+    --- PASS: TestOrdinaryDevWorkIsUnaffected/ssh_public_key (0.03s)
+    --- PASS: TestOrdinaryDevWorkIsUnaffected/ssh_known_hosts (0.02s)
+    --- PASS: TestOrdinaryDevWorkIsUnaffected/workspace_write (0.02s)
+=== RUN   TestEffectEgressRefusalReachesTheModel
+=== PAUSE TestEffectEgressRefusalReachesTheModel
+=== CONT  TestEffectEgressRefusalReachesTheModel
+2026/10/12 11:54:29 WARN controller: session has content but no session path; conversation will not be persisted label=x session_dir=/tmp/reasonix-test-280790920/sessions
+2026/10/12 11:54:29 WARN controller: keeping in-flight marker after failed turn snapshot err="session has content but no session path; conversation cannot be persisted"
+--- PASS: TestEffectEgressRefusalReachesTheModel (0.37s)
+PASS
+ok  	reasonix/internal/assembly/boot	1.006s

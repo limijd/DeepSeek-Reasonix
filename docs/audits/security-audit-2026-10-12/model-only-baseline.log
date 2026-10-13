@@ -1,0 +1,18 @@
+--- FAIL: TestEffectForkBashCannotUseModelNetwork (0.23s)
+    model_only_network_test.go:37: model-only boundary: exit status 1
+        warning: project config sets sandbox.bash = "off"; ignored: a project file may only narrow this setting; set it in your user config to change it
+        2026/10/12 19:30:26 WARN controller: session has content but no session path; conversation will not be persisted label=x session_dir=/tmp/reasonix-test-1015295302/sessions
+        2026/10/12 19:30:26 WARN controller: keeping in-flight marker after failed turn snapshot err="session has content but no session path; conversation cannot be persisted"
+        --- FAIL: TestEffectForkBashCannotUseModelNetwork (0.22s)
+            model_only_network_test.go:91: Bash inherited model egress: {writeRoots:[] forbidReadRoots:[] readRoots:[] network:true bash:{Mode:enforce WriteRoots:[] Pins:<nil> ReadRoots:[] AppContainerWriteRoots:[] DirectWrites:false ForbidReadRoots:[] Network:true HostAuthorities:[] Egress:0x362253e30a00 ClosedLoopbackPorts:[] MinimalWrites:false Shell:{Kind:0 Path: Fallback:} ShellEnv:map[] SessionTemp:} bashTimeout:0 search:{RgPath:} sessionGuard:{stateRoot: allowRoots:[] hintNeedles:[]} managedConfig:{paths:[]} readPaths:<nil> sessionTemp:<nil> egress:0x362253e30a00 evidenceSeal:<nil>}: <nil>
+        FAIL
+FAIL
+FAIL	reasonix/internal/assembly/boot	0.247s
+--- FAIL: TestWebFetchCannotUseModelNetwork (0.01s)
+    model_only_network_test.go:26: model-only boundary: exit status 1
+        --- FAIL: TestWebFetchCannotUseModelNetwork (0.00s)
+            model_only_network_test.go:32: web_fetch reached proxy resolution
+        FAIL
+FAIL
+FAIL	reasonix/internal/tools/builtin	0.019s
+FAIL

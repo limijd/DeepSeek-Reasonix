@@ -316,7 +316,11 @@ func (b *builder) wireTools() error {
 	opts, cfg, root := b.opts, b.cfg, b.root
 	t := &b.tools
 	t.reg = newToolRegistry(opts)
-	t.env = resolveToolEnvironment(opts, cfg, b.roots, root, b.additionalDirs, b.shell, b.stderr)
+	var err error
+	t.env, err = resolveToolEnvironment(opts, cfg, b.roots, root, b.additionalDirs, b.shell, b.stderr)
+	if err != nil {
+		return err
+	}
 	env := t.env
 	// The full inventory registers for use_capability; the provider-visible surface narrows later.
 	addBuiltins(t.reg, cfg.Tools.Enabled, env.writeRoots, env.bash, env.bashTimeout, env.search, b.stderr, root, b.proxy, env.forbidReadRoots, env.readRoots, env.readPaths, env.sessionGuard, env.managedConfig, opts.FileOverlay, opts.TerminalRunner, env.sessionTemp, b.fileWriteReceipt)

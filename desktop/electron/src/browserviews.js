@@ -3,6 +3,7 @@ const crypto = require("node:crypto");
 const { WebContentsView, session } = require("electron");
 const { installPaneReload } = require("./reload");
 const { guestNavigationAllowed, typed } = require("./browserguard");
+const { networkAllowed } = require("./networkpolicy");
 
 // The size a page lays out at while nobody is looking at it: the kernel drives
 // pages whether or not the panel is open, and a page sized to nothing reads as
@@ -57,7 +58,7 @@ class BrowserViews {
       } catch {
         cancel = false;
       }
-      done({ cancel });
+      done({ cancel: cancel || !networkAllowed(details.url) });
     });
     ses.on("will-download", (event, item, contents) => {
       event.preventDefault();

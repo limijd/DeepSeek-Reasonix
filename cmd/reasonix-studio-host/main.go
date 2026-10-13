@@ -18,6 +18,7 @@ import (
 	"os"
 	"os/signal"
 	"path/filepath"
+	"reasonix/internal/base/netpolicy"
 	"strings"
 	"syscall"
 	"time"
@@ -107,6 +108,7 @@ func studioUpdateHost(shell shellIdentity, owner *shellOwner) appupdate.Capabili
 }
 
 func main() {
+	netpolicy.Enable()
 	provider.SetClientVersion(version)
 	// Ahead of this host's own flags: a macOS install re-executes this binary
 	// to swap the bundle, and that child's argv is the update's. Parsed as this
@@ -338,6 +340,9 @@ func assemble(ctx context.Context, logs, handshakeTo io.Writer, shell shellIdent
 	}
 	bc := serve.NewBroadcaster()
 	paneSink := decorate(bc)
+	if !cfg.DesktopMetrics() {
+		_ = telemetry.CleanupSurface(config.ReasonixHomeDir(), surface.Studio)
+	}
 	if cfg.DesktopTelemetry() || cfg.DesktopMetrics() {
 		reporter := telemetry.Start(studioTelemetryOptions(ctx, cfg, shell.version))
 		if cfg.DesktopMetrics() {
@@ -421,6 +426,9 @@ func assemble(ctx context.Context, logs, handshakeTo io.Writer, shell shellIdent
 }
 
 func startCloudRemote(ctx context.Context, cfg *config.Config, logs io.Writer, tasks remotecloud.TaskService) {
+	if netpolicy.Active() {
+		return
+	}
 	httpClient, err := netclient.NewHTTPClient(cfg.NetworkProxySpec(), netclient.TransportOptions{})
 	if err != nil {
 		fmt.Fprintf(logs, "remote cloud: %v\n", err)
@@ -460,18 +468,24 @@ func desktopTelemetryOn() bool {
 	return err == nil && cfg != nil && cfg.DesktopTelemetry()
 }
 
+func desktopMetricsOn() bool {
+	cfg, err := config.LoadForEditReadOnlyStrict(config.UserConfigPath())
+	return err == nil && cfg != nil && cfg.DesktopMetrics()
+}
+
 func studioTelemetryOptions(ctx context.Context, cfg *config.Config, studioVersion string) telemetry.Options {
 	return telemetry.Options{
-		Context:      ctx,
-		Mode:         "on",
-		Version:      studioVersion,
-		Surface:      surface.Studio,
-		SuppressPing: !cfg.DesktopTelemetry(),
-		PingAllowed:  desktopTelemetryOn,
-		HomeDir:      config.ReasonixHomeDir(),
-		Interactive:  true,
-		Proxy:        cfg.NetworkProxySpec(),
-		Language:     cfg.Language,
+		Context:        ctx,
+		Mode:           "on",
+		Version:        studioVersion,
+		Surface:        surface.Studio,
+		SuppressPing:   !cfg.DesktopTelemetry(),
+		PingAllowed:    desktopTelemetryOn,
+		MetricsAllowed: desktopMetricsOn,
+		HomeDir:        config.ReasonixHomeDir(),
+		Interactive:    true,
+		Proxy:          cfg.NetworkProxySpec(),
+		Language:       cfg.Language,
 	}
 }
 

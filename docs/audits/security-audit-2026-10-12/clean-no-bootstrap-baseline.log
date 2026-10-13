@@ -1,0 +1,9 @@
+--- FAIL: TestCleanForkPreservesAgentAndDisablesBackgroundServices (0.00s)
+    policy_test.go:51: disabled wallet still appears configured: {Configured:true Balance:<nil> At:0001-01-01 00:00:00 +0000 UTC Err:wallet endpoint unreachable}
+FAIL
+FAIL	reasonix/tools/securitycheck	0.009s
+--- FAIL: TestProbesDoNotDownloadToolchainsOrCheckNPMUpdates (0.00s)
+    probe_test.go:406: probe: {Command:probe --version Binary:probe Output: Found:false Error:exit exit status 1 Path:/tmp/TestProbesDoNotDownloadToolchainsOrCheckNPMUpdates719505896/001/probe}
+FAIL
+FAIL	reasonix/internal/platform/environment	0.003s
+FAIL

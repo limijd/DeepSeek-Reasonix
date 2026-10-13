@@ -1,0 +1,9 @@
+{"Time":"2026-10-12T12:47:12.087467475-05:00","Action":"start","Package":"reasonix/internal/tools/builtin"}
+{"Time":"2026-10-12T12:47:12.095676487-05:00","Action":"run","Package":"reasonix/internal/tools/builtin","Test":"TestWebFetchHTTPSProxyNeverSendsPlaintextCONNECT"}
+{"Time":"2026-10-12T12:47:12.095709984-05:00","Action":"output","Package":"reasonix/internal/tools/builtin","Test":"TestWebFetchHTTPSProxyNeverSendsPlaintextCONNECT","Output":"=== RUN   TestWebFetchHTTPSProxyNeverSendsPlaintextCONNECT\n"}
+{"Time":"2026-10-12T12:47:12.09807732-05:00","Action":"output","Package":"reasonix/internal/tools/builtin","Test":"TestWebFetchHTTPSProxyNeverSendsPlaintextCONNECT","Output":"    webfetch_proxy_test.go:51: first proxy byte=0x43, want TLS handshake (0x16)\n"}
+{"Time":"2026-10-12T12:47:12.098105871-05:00","Action":"output","Package":"reasonix/internal/tools/builtin","Test":"TestWebFetchHTTPSProxyNeverSendsPlaintextCONNECT","Output":"--- FAIL: TestWebFetchHTTPSProxyNeverSendsPlaintextCONNECT (0.00s)\n"}
+{"Time":"2026-10-12T12:47:12.098114335-05:00","Action":"fail","Package":"reasonix/internal/tools/builtin","Test":"TestWebFetchHTTPSProxyNeverSendsPlaintextCONNECT","Elapsed":0}
+{"Time":"2026-10-12T12:47:12.098148011-05:00","Action":"output","Package":"reasonix/internal/tools/builtin","Output":"FAIL\n"}
+{"Time":"2026-10-12T12:47:12.098414335-05:00","Action":"output","Package":"reasonix/internal/tools/builtin","Output":"FAIL\treasonix/internal/tools/builtin\t0.011s\n"}
+{"Time":"2026-10-12T12:47:12.098439265-05:00","Action":"fail","Package":"reasonix/internal/tools/builtin","Elapsed":0.011}

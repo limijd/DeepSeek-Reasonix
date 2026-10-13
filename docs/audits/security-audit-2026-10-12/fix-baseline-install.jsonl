@@ -1,0 +1,20 @@
+{"Time":"2026-10-12T12:47:13.083507389-05:00","Action":"start","Package":"reasonix/internal/ext/installsource"}
+{"Time":"2026-10-12T12:47:13.092400836-05:00","Action":"run","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyCannotReachInternalTargets"}
+{"Time":"2026-10-12T12:47:13.092441447-05:00","Action":"output","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyCannotReachInternalTargets","Output":"=== RUN   TestInstallProxyCannotReachInternalTargets\n"}
+{"Time":"2026-10-12T12:47:13.095324113-05:00","Action":"output","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyCannotReachInternalTargets","Output":"    ssrf_proxy_test.go:33: http://169.254.169.254 passed the SSRF guard\n"}
+{"Time":"2026-10-12T12:47:13.096543657-05:00","Action":"output","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyCannotReachInternalTargets","Output":"--- FAIL: TestInstallProxyCannotReachInternalTargets (0.00s)\n"}
+{"Time":"2026-10-12T12:47:13.096560851-05:00","Action":"fail","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyCannotReachInternalTargets","Elapsed":0}
+{"Time":"2026-10-12T12:47:13.096590264-05:00","Action":"run","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyRefusesNamesResolvingToInternalAddresses"}
+{"Time":"2026-10-12T12:47:13.096597766-05:00","Action":"output","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyRefusesNamesResolvingToInternalAddresses","Output":"=== RUN   TestInstallProxyRefusesNamesResolvingToInternalAddresses\n"}
+{"Time":"2026-10-12T12:47:13.098085462-05:00","Action":"output","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyRefusesNamesResolvingToInternalAddresses","Output":"    ssrf_proxy_test.go:73: internal hostname: error=\u003cnil\u003e proxy hits=1\n"}
+{"Time":"2026-10-12T12:47:13.09826111-05:00","Action":"output","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyRefusesNamesResolvingToInternalAddresses","Output":"--- FAIL: TestInstallProxyRefusesNamesResolvingToInternalAddresses (0.00s)\n"}
+{"Time":"2026-10-12T12:47:13.098295187-05:00","Action":"fail","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyRefusesNamesResolvingToInternalAddresses","Elapsed":0}
+{"Time":"2026-10-12T12:47:13.098320005-05:00","Action":"run","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyPinsDNSAndGuardsRedirects"}
+{"Time":"2026-10-12T12:47:13.098336643-05:00","Action":"output","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyPinsDNSAndGuardsRedirects","Output":"=== RUN   TestInstallProxyPinsDNSAndGuardsRedirects\n"}
+{"Time":"2026-10-12T12:47:13.099283509-05:00","Action":"output","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyPinsDNSAndGuardsRedirects","Output":"    ssrf_proxy_test.go:83: proxy received GET install.example.invalid, want CONNECT 127.0.0.1:80\n"}
+{"Time":"2026-10-12T12:47:13.099465955-05:00","Action":"output","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyPinsDNSAndGuardsRedirects","Output":"    ssrf_proxy_test.go:122: body=\"\" error=\u003cnil\u003e\n"}
+{"Time":"2026-10-12T12:47:13.099603845-05:00","Action":"output","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyPinsDNSAndGuardsRedirects","Output":"--- FAIL: TestInstallProxyPinsDNSAndGuardsRedirects (0.00s)\n"}
+{"Time":"2026-10-12T12:47:13.099611542-05:00","Action":"fail","Package":"reasonix/internal/ext/installsource","Test":"TestInstallProxyPinsDNSAndGuardsRedirects","Elapsed":0}
+{"Time":"2026-10-12T12:47:13.09963189-05:00","Action":"output","Package":"reasonix/internal/ext/installsource","Output":"FAIL\n"}
+{"Time":"2026-10-12T12:47:13.100279011-05:00","Action":"output","Package":"reasonix/internal/ext/installsource","Output":"FAIL\treasonix/internal/ext/installsource\t0.017s\n"}
+{"Time":"2026-10-12T12:47:13.100304487-05:00","Action":"fail","Package":"reasonix/internal/ext/installsource","Elapsed":0.017}

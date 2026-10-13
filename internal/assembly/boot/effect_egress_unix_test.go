@@ -5,6 +5,7 @@ package boot
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"os/exec"
 	"strings"
 	"sync"
@@ -102,6 +103,36 @@ model = "x"
 		if !strings.Contains(out, want) {
 			t.Fatalf("bash result missing %q:\n%s", want, out)
 		}
+	}
+}
+
+func TestEffectDenyOnlyEgressRefusesRuntimeAssembly(t *testing.T) {
+	home := statedBootHome(t)
+	dir := testenv.TempDir(t)
+	provider.Register("boot-deny-only", func(provider.Config) (provider.Provider, error) {
+		return &egressScriptProvider{}, nil
+	})
+	writeFile(t, dir, "reasonix.toml", `
+default_model = "test-model"
+
+[sandbox]
+denied_domains = ["blocked.example.invalid"]
+
+[codegraph]
+enabled = false
+
+[[providers]]
+name = "test-model"
+kind = "boot-deny-only"
+model = "x"
+`)
+	approveWorkspaceAt(t, home, dir)
+	ctrl, err := Build(context.Background(), Options{Home: home, WorkspaceRoot: dir, Sink: event.Discard})
+	if ctrl != nil {
+		ctrl.Close()
+	}
+	if !errors.Is(err, errDenyOnlyEgress) || ctrl != nil {
+		t.Fatalf("Build: controller=%v error=%v, want deny-only policy refusal", ctrl, err)
 	}
 }
 

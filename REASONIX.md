@@ -6,6 +6,10 @@ agent. It is the Reasonix analog of Claude Code's CLAUDE.md.
 
 ## Conventions
 
+- Fork 隐私边界：保持正常模型、工具、MCP/LSP、hooks、Git 和桌面功能。
+  关闭上游账号、遥测、云中继、更新下载、反馈上传和余额轮询；
+  禁止访问 `reasonix.io` 及子域和 `api.typesafe.ai`；本地模型禁止自动下载。
+  用户配置/主动调用的网络功能沿用原有权限与沙箱，不强制 Linux namespace 或仅允许 DeepSeek。
 - Go kernel under `internal/`; each package owns one concern. A package's long
   explanation belongs in its `doc.go`, not spread across implementation files.
 - One transport-agnostic `control.Controller` sits behind every frontend (chat

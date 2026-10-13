@@ -1,0 +1,19 @@
+{
+  "state_directory": "/tmp/reasonix-clean-idle-jr7vworg",
+  "version_exit": 0,
+  "version_output": "reasonix d1f096b20",
+  "studio_instance_exit": 0,
+  "studio_instance_nonempty": true,
+  "idle_exit": 124,
+  "idle_listening": true,
+  "idle_listener": "127.0.0.1:35847",
+  "network_trace": "/tmp/reasonix-clean-idle-network.log",
+  "port_and_pid_files_removed_on_shutdown": true,
+  "connect_calls": 0,
+  "sendto_calls": 0,
+  "sendmsg_calls": 0,
+  "traced_processes_exited": true,
+  "live_traced_processes": "",
+  "idle_seconds": 8,
+  "scope": "Linux CLI serve with clean state, no user-configured extensions, dummy key; startup and idle observation only, not proof against arbitrary third-party programs or other platforms."
+}

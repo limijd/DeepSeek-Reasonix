@@ -113,6 +113,10 @@ func (s *Server) attachments(w http.ResponseWriter, r *http.Request) {
 		badBody(w)
 		return
 	}
+	if strings.TrimSpace(body.Path) != "" && !s.grants.at(r).localDesktop {
+		refuse(w, http.StatusNotFound, codeDeviceHostOnly, "only the local desktop can import a host path", nil)
+		return
+	}
 	raw, err := attachmentBytes(body.Path, body.Data)
 	if err != nil {
 		refuseAttachment(w, body.Name, err)

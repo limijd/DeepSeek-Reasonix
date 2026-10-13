@@ -1,0 +1,24 @@
+=== RUN   TestAuditRemoteAttachmentReadsOutsideWorkspace
+2026/10/12 11:53:01 INFO serve: request method=POST path=/rt/r1/attachments status=200 duration=70.693µs
+2026/10/12 11:53:01 INFO serve: request method=GET path=/rt/r1/workspace/file status=200 duration=20.807µs
+    cloud_desktop_test.go:30: CONFIRMED: cloud device copied an outside file and read its dummy contents without local file approval
+2026/10/12 11:53:01 INFO serve: request method=POST path=/rt/r1/drop status=200 duration=15.808µs
+    cloud_desktop_test.go:37: CONFIRMED: cloud device minted a session reference to an outside directory
+--- PASS: TestAuditRemoteAttachmentReadsOutsideWorkspace (0.00s)
+PASS
+ok  	reasonix/internal/frontend/serve	0.010s
+=== RUN   TestAuditHTTPSProxySendsPlaintextCredential
+    bash_cancel_test.go:26: CONFIRMED: https proxy received CONNECT and dummy Basic credentials as plaintext HTTP
+--- PASS: TestAuditHTTPSProxySendsPlaintextCredential (0.00s)
+PASS
+ok  	reasonix/internal/tools/builtin	0.007s
+=== RUN   TestAuditProxyBypassesInstallSSRFGuard
+    archive_test.go:29: CONFIRMED: blocked metadata IP was forwarded through a local fake proxy; no actual metadata service contacted
+--- PASS: TestAuditProxyBypassesInstallSSRFGuard (0.00s)
+PASS
+ok  	reasonix/internal/ext/installsource	0.007s
+=== RUN   TestAuditDenyOnlyEgressPolicyIsIgnored
+    effect_egress_unix_test.go:17: CONFIRMED: deny-only domain policy returns before proxy or backend checks and leaves network open, without warning
+--- PASS: TestAuditDenyOnlyEgressPolicyIsIgnored (0.00s)
+PASS
+ok  	reasonix/internal/assembly/boot	0.008s

@@ -1,4 +1,5 @@
 "use strict";
+const { networkAllowed } = require("./networkpolicy");
 
 // Where a link is allowed to go. Links come out of model output, so the platform
 // opener must never be handed a scheme of its choosing — file:, and the handler
@@ -11,6 +12,7 @@ function externalTarget(raw) {
     return null;
   }
   if (url.protocol !== "http:" && url.protocol !== "https:") return null;
+  if (!networkAllowed(raw)) return null;
   return url.toString();
 }
 

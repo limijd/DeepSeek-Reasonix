@@ -1,0 +1,5 @@
+--- FAIL: TestCleanForkPreservesAgentAndDisablesBackgroundServices (5.00s)
+    policy_test.go:67: disabled cloud relay kept a background loop alive
+FAIL
+FAIL	reasonix/tools/securitycheck	5.010s
+FAIL

@@ -1,10 +1,9 @@
 package builtin
 
 import (
-	"bufio"
 	"context"
-	"encoding/base64"
 	"encoding/json"
+	"errors"
 	"fmt"
 	stdhtml "html"
 	"io"
@@ -17,9 +16,9 @@ import (
 	"unicode"
 
 	nethtml "golang.org/x/net/html"
-	"golang.org/x/net/proxy"
 
 	"reasonix/internal/base/netclient"
+	"reasonix/internal/base/netpolicy"
 	"reasonix/internal/contract/tool"
 )
 
@@ -28,6 +27,8 @@ func init() { tool.RegisterBuiltin(webFetch{}) }
 type webFetch struct {
 	proxySpec netclient.ProxySpec
 }
+
+var errInvalidFetchProxy = errors.New("web_fetch: invalid proxy URL")
 
 const (
 	webFetchTimeout = 15 * time.Second
@@ -77,95 +78,20 @@ func ssrfGuardedTransport(proxyURL string) *http.Transport {
 
 	if proxyURL != "" {
 		pu, err := url.Parse(proxyURL)
-		if err == nil && pu.Host != "" {
-			switch pu.Scheme {
-			case "http", "https":
-				// HTTP CONNECT: dial proxy → send CONNECT with the ORIGINAL
-				// hostname (not a locally-resolved IP) so the proxy handles DNS.
-				// This is essential for users whose local DNS is blocked (GFW).
-				// SSRF protection: IP literals are checked directly; domain names
-				// go through the trusted proxy which resolves them.
-				proxyDialer := dialer
-				tr.DialContext = func(ctx context.Context, network, addr string) (net.Conn, error) {
-					host, port, err := net.SplitHostPort(addr)
-					if err != nil {
-						return nil, err
-					}
-					// SSRF check on IP literals only — domain names go through
-					// the trusted proxy which resolves them on the remote side.
-					if ip := net.ParseIP(host); ip != nil {
-						if blockedFetchIP(ip) {
-							return nil, fmt.Errorf("refusing to fetch internal address %s (resolves to %s)", host, ip)
-						}
-					}
-					// Dial the proxy (proxy address is never an SSRF target — the
-					// user configured it, and it's almost certainly an IP or a
-					// resolvable hostname reachable from the local network).
-					proxyConn, err := proxyDialer.DialContext(ctx, "tcp", pu.Host)
-					if err != nil {
-						return nil, fmt.Errorf("connect to proxy %s: %w", pu.Host, err)
-					}
-					// CONNECT the ORIGINAL hostname through the proxy, letting
-					// the proxy resolve DNS on the remote side. If this is an IP
-					// literal we already vetted it above.
-					targetAddr := net.JoinHostPort(host, port)
-					connectReq := &http.Request{
-						Method: http.MethodConnect,
-						URL:    &url.URL{Host: targetAddr},
-						Host:   targetAddr,
-						Header: make(http.Header),
-					}
-					if pu.User != nil {
-						user := pu.User.Username()
-						pass, _ := pu.User.Password()
-						auth := base64.StdEncoding.EncodeToString([]byte(user + ":" + pass))
-						connectReq.Header.Set("Proxy-Authorization", "Basic "+auth)
-					}
-					if err := connectReq.Write(proxyConn); err != nil {
-						proxyConn.Close()
-						return nil, fmt.Errorf("write CONNECT to proxy: %w", err)
-					}
-					br := bufio.NewReader(proxyConn)
-					resp, err := http.ReadResponse(br, connectReq)
-					if err != nil {
-						proxyConn.Close()
-						return nil, fmt.Errorf("read CONNECT response: %w", err)
-					}
-					if resp.StatusCode != http.StatusOK {
-						proxyConn.Close()
-						return nil, fmt.Errorf("proxy CONNECT failed: %s", resp.Status)
-					}
-					return proxyConn, nil
-				}
-				tr.Proxy = nil
-
-			case "socks5", "socks5h":
-				// Tunnel through SOCKS5. Dial the trusted proxy with a plain
-				// dialer (a proxy on a private/LAN address must not be rejected
-				// by the SSRF guard), then route the target through it. IP-literal
-				// targets are still SSRF-checked; hostnames are resolved by the
-				// proxy — the same boundary as the HTTP CONNECT path above.
-				var auth *proxy.Auth
-				if pu.User != nil {
-					pass, _ := pu.User.Password()
-					auth = &proxy.Auth{User: pu.User.Username(), Password: pass}
-				}
-				if sd, err := proxy.SOCKS5("tcp", pu.Host, auth, dialer); err == nil {
-					if cd, ok := sd.(proxy.ContextDialer); ok {
-						tr.Proxy = nil
-						tr.DialContext = func(ctx context.Context, network, addr string) (net.Conn, error) {
-							host, _, err := net.SplitHostPort(addr)
-							if err != nil {
-								return nil, err
-							}
-							if ip := net.ParseIP(host); ip != nil && blockedFetchIP(ip) {
-								return nil, fmt.Errorf("refusing to fetch internal address %s (resolves to %s)", host, ip)
-							}
-							return cd.DialContext(ctx, network, addr)
-						}
-					}
-				}
+		tr.DialContext = func(ctx context.Context, network, addr string) (net.Conn, error) {
+			if err != nil {
+				return nil, errInvalidFetchProxy
 			}
+			host, _, err := net.SplitHostPort(addr)
+			if err != nil {
+				return nil, err
+			}
+			// Hostnames retain the configured proxy's DNS policy; IP literals
+			// must pass the guard before any proxy connection is made.
+			if ip := net.ParseIP(host); ip != nil && blockedFetchIP(ip) {
+				return nil, fmt.Errorf("refusing to fetch internal address %s (resolves to %s)", host, ip)
+			}
+			return netclient.DialProxy(ctx, pu, dialer, network, addr)
 		}
 	}
 
@@ -212,6 +138,9 @@ type webFetchRoundTripper struct {
 }
 
 func (rt webFetchRoundTripper) RoundTrip(req *http.Request) (*http.Response, error) {
+	if err := netpolicy.CheckURL(req.URL); err != nil {
+		return nil, err
+	}
 	proxyURL, err := rt.proxyURLFor(req)
 	if err != nil {
 		return nil, fmt.Errorf("resolve proxy: %w", err)

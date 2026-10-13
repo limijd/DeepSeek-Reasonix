@@ -1,0 +1,112 @@
+go: downloading golang.org/x/crypto v0.57.0
+go: downloading golang.org/x/text v0.42.0
+go: downloading github.com/gorilla/websocket v1.5.3
+go: downloading github.com/santhosh-tekuri/jsonschema/v6 v6.0.3
+go: downloading golang.org/x/net v0.60.0
+go: downloading github.com/pkg/sftp v1.13.11
+go: downloading github.com/BurntSushi/toml v1.6.0
+go: downloading mvdan.cc/sh/v3 v3.14.1
+go: downloading github.com/bmatcuk/doublestar/v4 v4.10.2
+go: downloading github.com/charmbracelet/x/ansi v0.11.8
+go: downloading github.com/rivo/uniseg v0.4.7
+go: downloading github.com/joho/godotenv v1.5.1
+go: downloading github.com/aymanbagabas/go-udiff v0.4.1
+go: downloading golang.org/x/sys v0.49.0
+go: downloading github.com/clipperhouse/displaywidth v0.11.0
+go: downloading github.com/lucasb-eyer/go-colorful v1.4.1
+go: downloading github.com/mattn/go-runewidth v0.0.31
+go: downloading github.com/clipperhouse/uax29/v2 v2.7.0
+go: downloading github.com/kr/fs v0.1.0
+ok  	reasonix/internal/platform/remotecloud	5.027s
+ok  	reasonix/internal/safety/permission	0.058s
+ok  	reasonix/internal/safety/redirectguard	(cached)
+ok  	reasonix/internal/base/secrets	3.810s
+ok  	reasonix/internal/ext/configbackup	0.419s
+ok  	reasonix/internal/safety/egress	0.025s
+--- FAIL: TestApprovedDirectoryCopyFromRootAlias (0.08s)
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/directory/auto/direct (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {110071364 63927420475 0x10e8120} {48 12921 1 33216 1000 1000 0 0 17 4096 8 {1791823675 110535768} {1791823675 110071364} {1791823675 110071364} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/directory/auto/alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {111579928 63927420475 0x10e8120} {48 12951 1 33216 1000 1000 0 0 17 4096 8 {1791823675 111751537} {1791823675 111579928} {1791823675 111579928} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/directory/auto/chain (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {114061581 63927420475 0x10e8120} {48 12982 1 33216 1000 1000 0 0 17 4096 8 {1791823675 114785849} {1791823675 114061581} {1791823675 114061581} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/directory/auto/parent-alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {117422974 63927420475 0x10e8120} {48 13012 1 33216 1000 1000 0 0 17 4096 8 {1791823675 117751574} {1791823675 117422974} {1791823675 117422974} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/directory/copy/direct (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {119073788 63927420475 0x10e8120} {48 13041 1 33216 1000 1000 0 0 17 4096 8 {1791823675 119584225} {1791823675 119073788} {1791823675 119073788} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/directory/copy/alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {120651856 63927420475 0x10e8120} {48 13071 1 33216 1000 1000 0 0 17 4096 8 {1791823675 120751593} {1791823675 120651856} {1791823675 120651856} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/directory/copy/chain (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {122247854 63927420475 0x10e8120} {48 13102 1 33216 1000 1000 0 0 17 4096 8 {1791823675 122773090} {1791823675 122247854} {1791823675 122247854} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/directory/copy/parent-alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {124301321 63927420475 0x10e8120} {48 13132 1 33216 1000 1000 0 0 17 4096 8 {1791823675 124751618} {1791823675 124301321} {1791823675 124301321} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/directory/auto/direct (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {125781740 63927420475 0x10e8120} {48 13161 1 33216 1000 1000 0 0 17 4096 8 {1791823675 126334799} {1791823675 125781740} {1791823675 125781740} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/directory/auto/alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {127184022 63927420475 0x10e8120} {48 13191 1 33216 1000 1000 0 0 17 4096 8 {1791823675 127732855} {1791823675 127184022} {1791823675 127184022} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/directory/auto/chain (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {128524398 63927420475 0x10e8120} {48 13222 1 33216 1000 1000 0 0 17 4096 8 {1791823675 128751643} {1791823675 128524398} {1791823675 128524398} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/directory/auto/parent-alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {129733650 63927420475 0x10e8120} {48 13252 1 33216 1000 1000 0 0 17 4096 8 {1791823675 129751650} {1791823675 129733650} {1791823675 129733650} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/directory/copy/direct (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {131204947 63927420475 0x10e8120} {48 13281 1 33216 1000 1000 0 0 17 4096 8 {1791823675 131751662} {1791823675 131204947} {1791823675 131204947} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/directory/copy/alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {133629518 63927420475 0x10e8120} {48 13311 1 33216 1000 1000 0 0 17 4096 8 {1791823675 133751675} {1791823675 133629518} {1791823675 133629518} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/directory/copy/chain (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {135179915 63927420475 0x10e8120} {48 13342 1 33216 1000 1000 0 0 17 4096 8 {1791823675 135751687} {1791823675 135179915} {1791823675 135179915} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/directory/copy/parent-alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {136977544 63927420475 0x10e8120} {48 13372 1 33216 1000 1000 0 0 17 4096 8 {1791823675 137582746} {1791823675 136977544} {1791823675 136977544} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/manifest/auto/direct (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {138526650 63927420475 0x10e8120} {48 13401 1 33216 1000 1000 0 0 17 4096 8 {1791823675 138751706} {1791823675 138526650} {1791823675 138526650} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/manifest/auto/alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {141853124 63927420475 0x10e8120} {48 13431 1 33216 1000 1000 0 0 17 4096 8 {1791823675 142240686} {1791823675 141853124} {1791823675 141853124} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/manifest/auto/chain (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {142827926 63927420475 0x10e8120} {48 13462 1 33216 1000 1000 0 0 17 4096 8 {1791823675 143146403} {1791823675 142827926} {1791823675 142827926} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/manifest/auto/parent-alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {143680321 63927420475 0x10e8120} {48 13492 1 33216 1000 1000 0 0 17 4096 8 {1791823675 143751737} {1791823675 143680321} {1791823675 143680321} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/manifest/copy/direct (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {144441582 63927420475 0x10e8120} {48 13521 1 33216 1000 1000 0 0 17 4096 8 {1791823675 144712879} {1791823675 144441582} {1791823675 144441582} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/manifest/copy/alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {145222911 63927420475 0x10e8120} {48 13551 1 33216 1000 1000 0 0 17 4096 8 {1791823675 145497742} {1791823675 145222911} {1791823675 145222911} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/manifest/copy/chain (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {146012476 63927420475 0x10e8120} {48 13582 1 33216 1000 1000 0 0 17 4096 8 {1791823675 146751756} {1791823675 146012476} {1791823675 146012476} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/project/manifest/copy/parent-alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {148089099 63927420475 0x10e8120} {48 13612 1 33216 1000 1000 0 0 17 4096 8 {1791823675 148649197} {1791823675 148089099} {1791823675 148089099} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/manifest/auto/direct (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {149713724 63927420475 0x10e8120} {48 13641 1 33216 1000 1000 0 0 17 4096 8 {1791823675 149751775} {1791823675 149713724} {1791823675 149713724} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/manifest/auto/alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {151462070 63927420475 0x10e8120} {48 13671 1 33216 1000 1000 0 0 17 4096 8 {1791823675 151751788} {1791823675 151462070} {1791823675 151462070} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/manifest/auto/chain (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {153114169 63927420475 0x10e8120} {48 13702 1 33216 1000 1000 0 0 17 4096 8 {1791823675 153699609} {1791823675 153114169} {1791823675 153114169} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/manifest/auto/parent-alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {154752562 63927420475 0x10e8120} {48 13732 1 33216 1000 1000 0 0 17 4096 8 {1791823675 155741505} {1791823675 154752562} {1791823675 154752562} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/manifest/copy/direct (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {157240134 63927420475 0x10e8120} {48 13761 1 33216 1000 1000 0 0 17 4096 8 {1791823675 157751826} {1791823675 157240134} {1791823675 157240134} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/manifest/copy/alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {158842038 63927420475 0x10e8120} {48 13791 1 33216 1000 1000 0 0 17 4096 8 {1791823675 159405178} {1791823675 158842038} {1791823675 158842038} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/manifest/copy/chain (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {161507693 63927420475 0x10e8120} {48 13822 1 33216 1000 1000 0 0 17 4096 8 {1791823675 161751851} {1791823675 161507693} {1791823675 161507693} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/skill/global/manifest/copy/parent-alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {162801122 63927420475 0x10e8120} {48 13852 1 33216 1000 1000 0 0 17 4096 8 {1791823675 163271064} {1791823675 162801122} {1791823675 162801122} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/plugin/global/directory/auto/direct (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {166640944 63927420475 0x10e8120} {48 13892 1 33216 1000 1000 0 0 17 4096 8 {1791823675 166751882} {1791823675 166640944} {1791823675 166640944} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/plugin/global/directory/auto/alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {169706167 63927420475 0x10e8120} {48 13937 1 33216 1000 1000 0 0 17 4096 8 {1791823675 169751901} {1791823675 169706167} {1791823675 169706167} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/plugin/global/directory/auto/chain (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {173145434 63927420475 0x10e8120} {48 13983 1 33216 1000 1000 0 0 17 4096 8 {1791823675 173161110} {1791823675 173145434} {1791823675 173145434} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/plugin/global/directory/auto/parent-alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {175898757 63927420475 0x10e8120} {48 14028 1 33216 1000 1000 0 0 17 4096 8 {1791823675 175921948} {1791823675 175898757} {1791823675 175898757} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/plugin/global/directory/copy/direct (0.01s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {181211988 63927420475 0x10e8120} {48 14072 1 33216 1000 1000 0 0 17 4096 8 {1791823675 181227886} {1791823675 181211988} {1791823675 181211988} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/plugin/global/directory/copy/alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {183497158 63927420475 0x10e8120} {48 14117 1 33216 1000 1000 0 0 17 4096 8 {1791823675 183751989} {1791823675 183497158} {1791823675 183497158} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/plugin/global/directory/copy/chain (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {186705135 63927420475 0x10e8120} {48 14163 1 33216 1000 1000 0 0 17 4096 8 {1791823675 186752008} {1791823675 186705135} {1791823675 186705135} [0 0 0]}}, err=<nil>
+    --- FAIL: TestApprovedDirectoryCopyFromRootAlias/plugin/global/directory/copy/parent-alias (0.00s)
+        directory_copy_root_alias_test.go:130: executable permissions = &{inspect.sh 17 448 {189834903 63927420475 0x10e8120} {48 14208 1 33216 1000 1000 0 0 17 4096 8 {1791823675 189846428} {1791823675 189834903} {1791823675 189834903} [0 0 0]}}, err=<nil>
+--- FAIL: TestUnpackTarballStripsRootAndOmitsSymlinks (0.00s)
+    tarball_test.go:101: hook mode = -rwx------, want 0755 so it stays runnable
+FAIL
+FAIL	reasonix/internal/ext/installsource	2.628s
+ok  	reasonix/internal/model/providerbroker	0.032s
+FAIL

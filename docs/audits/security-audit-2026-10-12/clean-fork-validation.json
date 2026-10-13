@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-13",
+  "policy": "Clean agent fork: built-in background services disabled; normal user-selected models and tools retain original permissions. Supersedes DeepSeek-only and mandatory Linux network namespace.",
+  "toolchain": "Go 1.26.9, GOTOOLCHAIN=local, GOPROXY=off, GOSUMDB=off, umask 022",
+  "checks": {
+    "make check": "passed",
+    "make lint": "passed, 0 issues",
+    "go vet ./...": "passed",
+    "make coverage-gate": "passed, all 17 existing sensitive floors retained",
+    "make build": "passed",
+    "Studio host build": "passed",
+    "frontend TypeScript/Vite build": "passed with existing chunk-size warning"
+  },
+  "tests": {
+    "background services and normal model discovery/hook integration": "passed; overrides and old consent cannot enable background service transport",
+    "netpolicy, egress, Laya, environment, billing, account, feedback, update, remotecloud, Studio host": "passed",
+    "builtin, boot, CLI, installsource, netclient, telemetry, crashreport": "passed",
+    "serve": "failed: existing TestCheckProviderReportsWhatTheEndpointSaid; expected unreachable, got provider.probe.timeout; remaining tests completed",
+    "Electron": {
+      "passed": 110,
+      "skipped": 3,
+      "failed": 0
+    },
+    "negative_baselines": "new wallet-state, probe-offline and direct cloud-relay regressions failed before their fixes; see clean-no-bootstrap-baseline.log and clean-relay-baseline.log"
+  },
+  "smoke": {
+    "state_directory": "/tmp/reasonix-clean-idle-jr7vworg",
+    "version_exit": 0,
+    "version_output": "reasonix d1f096b20",
+    "studio_instance_exit": 0,
+    "studio_instance_nonempty": true,
+    "idle_exit": 124,
+    "idle_listening": true,
+    "idle_listener": "127.0.0.1:35847",
+    "network_trace": "/tmp/reasonix-clean-idle-network.log",
+    "port_and_pid_files_removed_on_shutdown": true,
+    "connect_calls": 0,
+    "sendto_calls": 0,
+    "sendmsg_calls": 0,
+    "traced_processes_exited": true,
+    "live_traced_processes": "",
+    "idle_seconds": 8,
+    "scope": "Linux CLI serve with clean state, no user-configured extensions, dummy key; startup and idle observation only, not proof against arbitrary third-party programs or other platforms."
+  },
+  "review": {
+    "correctness": "Reviewed service owners, old settings, cached wallet state, startup paths, normal proxy/tool behavior and original F1-F5 fixes.",
+    "security_review": "Reviewed blocking before requests, custom endpoint overrides, redirects/proxy guards, disabled cloud loop and remaining arbitrary-process/transport gaps. Fixed host checks are not OS-wide egress confinement."
+  },
+  "not_verified": [
+    "Real provider requests",
+    "Real Electron GUI launch",
+    "Windows/macOS",
+    "Full dependency source audit",
+    "Whole-process arbitrary dependency egress containment"
+  ],
+  "full_root_suite": "Not rerun in this iteration; historical fix-validation.json records original bootstrap, MemoryBench and provider-probe failures.",
+  "commit": "本文件记录提交前验证；提交标识以 Git 历史为准。"
+}

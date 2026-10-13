@@ -1,0 +1,35 @@
+{
+  "scope": "Default Linux fork: API host/protocol/method/path, tool separation and launcher isolation. Offline verification; not a proof against all malicious dependencies or host IPC delegation.",
+  "go_toolchain": "go1.26.9",
+  "checks": {
+    "affected_go_packages": "passed",
+    "model_provider_and_studio_host_packages": "passed",
+    "baseline_tool_policy_overlay": "failed as expected after restoring only the preceding tool network logic",
+    "final_regressions": "passed",
+    "electron": "111 passed, 3 platform skips, 0 failures",
+    "linux_launcher": "passed; rebuilt CLI and proxy",
+    "make_check": "passed",
+    "make_lint": "passed, 0 issues",
+    "go_vet": "passed",
+    "coverage_gate": "passed, 17 sensitive paths, umask 022"
+  },
+  "baseline_scope": "Overlay reconstructs the previous routeEgress branch and removes the web_fetch early refusal. It is not a pristine upstream source snapshot. Both physical and logical workspace paths are mapped.",
+  "limitations": [
+    "Host broker uses system DNS only to resolve the fixed model hostname.",
+    "CONNECT is opaque TLS; model method/path restrictions are application-layer checks.",
+    "Custom host Unix sockets and display delegation are not fully isolated.",
+    "Real Electron GUI and live model service not validated."
+  ],
+  "logs": [
+    "model-only-tests.log",
+    "model-only-models.log",
+    "model-only-baseline.log",
+    "model-only-regressions.log",
+    "model-only-electron.log",
+    "model-only-network.log",
+    "model-only-coverage.log",
+    "model-only-check.log",
+    "model-only-lint.log",
+    "model-only-vet.log"
+  ]
+}

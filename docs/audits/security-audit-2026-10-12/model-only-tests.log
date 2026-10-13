@@ -1,0 +1,6 @@
+ok  	reasonix/internal/base/netpolicy	0.003s
+ok  	reasonix/internal/base/netclient	0.021s
+ok  	reasonix/internal/safety/egress	0.019s
+ok  	reasonix/internal/tools/builtin	10.920s
+ok  	reasonix/internal/assembly/boot	71.057s
+ok  	reasonix/cmd/reasonix-network-proxy	(cached)

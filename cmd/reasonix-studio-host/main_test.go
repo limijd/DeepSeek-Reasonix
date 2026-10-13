@@ -98,6 +98,38 @@ func TestStudioTelemetryUsesItsOwnSurfaceAndConsent(t *testing.T) {
 	}
 }
 
+func TestStudioMetricsConsentIsReadFreshFromUserConfig(t *testing.T) {
+	t.Setenv("REASONIX_HOME", testenv.TempDir(t))
+	path := config.UserConfigPath()
+	if err := os.MkdirAll(filepath.Dir(path), 0o700); err != nil {
+		t.Fatal(err)
+	}
+	project := testenv.TempDir(t)
+	if err := os.WriteFile(filepath.Join(project, "reasonix.toml"), []byte("[desktop]\nmetrics=true\n"), 0o600); err != nil {
+		t.Fatal(err)
+	}
+	t.Chdir(project)
+	opts := studioTelemetryOptions(context.Background(), config.Default(), "2.20.2")
+	if opts.MetricsAllowed == nil {
+		t.Fatal("Studio's metrics have no live consent check")
+	}
+	for _, tt := range []struct {
+		body string
+		want bool
+	}{
+		{"[desktop]\nmetrics=true\n", true},
+		{"[desktop]\nmetrics=false\n", false},
+		{"[desktop]\nmetrics=false\n[broken\n", false},
+	} {
+		if err := os.WriteFile(path, []byte(tt.body), 0o600); err != nil {
+			t.Fatal(err)
+		}
+		if got := opts.MetricsAllowed(); got != tt.want {
+			t.Fatalf("metrics consent=%v, want %v", got, tt.want)
+		}
+	}
+}
+
 // recordingRunner stands in for the agent: a turn that reaches it proves the
 // request crossed the boundary and landed in the kernel, which is the only
 // thing a status code cannot say.

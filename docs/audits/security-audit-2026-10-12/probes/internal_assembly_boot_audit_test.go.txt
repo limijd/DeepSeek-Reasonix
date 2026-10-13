@@ -1,0 +1,18 @@
+package boot
+import (
+ "bytes"
+ "testing"
+ "reasonix/internal/contract/config"
+ "reasonix/internal/safety/sandbox"
+)
+func TestAuditDenyOnlyEgressPolicyIsIgnored(t *testing.T) {
+ c := config.Default()
+ c.Sandbox.DeniedDomains = []string{"blocked.audit.invalid"}
+ c.Sandbox.AllowedDomains = nil
+ env:=toolEnvironment{bash:sandbox.Spec{Mode:"enforce",Network:true}}
+ var warnings bytes.Buffer
+ env.routeEgress(c,&warnings)
+ if env.egress!=nil || env.bash.Egress!=nil || !env.bash.Network { t.Fatal("unexpected egress routing") }
+ if warnings.Len()!=0 { t.Fatalf("unexpected warning=%s",warnings.String()) }
+ t.Log("CONFIRMED: deny-only domain policy returns before proxy or backend checks and leaves network open, without warning")
+}

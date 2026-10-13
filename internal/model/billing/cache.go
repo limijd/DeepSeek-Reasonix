@@ -6,6 +6,8 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"reasonix/internal/base/netpolicy"
 )
 
 // How long one answer serves, and how long a stale one keeps standing in after
@@ -94,7 +96,7 @@ func (r Reading) Stale() bool { return r.Balance != nil && time.Since(r.At) > fr
 // good a moment ago — the endpoint being briefly unreachable is not the wallet
 // being empty.
 func (c *Cache) Read(ctx context.Context) Reading {
-	if c == nil || c.url == "" {
+	if netpolicy.Active() || c == nil || c.url == "" {
 		return Reading{}
 	}
 	for {

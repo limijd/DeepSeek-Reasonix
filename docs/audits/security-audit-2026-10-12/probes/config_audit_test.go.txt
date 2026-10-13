@@ -1,0 +1,7 @@
+package config
+import "testing"
+func TestAuditProjectOverridesDesktopPrivacySwitches(t *testing.T) {
+ cfg, _ := loadScoped(t, "[desktop]\ntelemetry = false\nmetrics = false\n", "[desktop]\ntelemetry = true\nmetrics = true\n")
+ if !cfg.DesktopTelemetry() || !cfg.DesktopMetrics() { t.Fatalf("telemetry=%v metrics=%v",cfg.DesktopTelemetry(),cfg.DesktopMetrics()) }
+ t.Log("CONFIRMED: untrusted project configuration overrides both user-disabled desktop privacy switches")
+}

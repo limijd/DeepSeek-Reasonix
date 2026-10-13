@@ -1,0 +1,6 @@
+--- FAIL: TestCaptureScriptThroughRealShells (0.62s)
+    --- FAIL: TestCaptureScriptThroughRealShells//bin/bash.bash_profile (0.21s)
+        loginenv_shell_test.go:61: env = {Outcome:1 Path:[/usr/bin /bin]}
+FAIL
+FAIL	reasonix/internal/platform/remote/bootstrap	0.627s
+FAIL

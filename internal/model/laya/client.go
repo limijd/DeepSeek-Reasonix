@@ -10,6 +10,7 @@ import (
 	"errors"
 	"fmt"
 	"os/exec"
+	"reasonix/internal/base/secrets"
 	"strings"
 
 	"reasonix/internal/safety/typesafe"
@@ -36,6 +37,7 @@ func (c LocalClient) Evaluate(ctx context.Context, request typesafe.Request) (ty
 		return typesafe.Response{}, err
 	}
 	cmd := exec.CommandContext(ctx, python, "-u", "-c", localBridge)
+	cmd.Env = append(secrets.ProcessEnv(), "HF_HUB_OFFLINE=1", "TRANSFORMERS_OFFLINE=1", "HF_HUB_DISABLE_TELEMETRY=1", "DO_NOT_TRACK=1")
 	cmd.Stdin = bytes.NewReader(payload)
 	output, err := cmd.CombinedOutput()
 	if err != nil {

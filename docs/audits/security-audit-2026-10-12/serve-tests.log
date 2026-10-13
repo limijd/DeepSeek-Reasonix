@@ -1,0 +1,14 @@
+go: downloading rsc.io/qr v0.2.0
+go: downloading golang.org/x/image v0.46.0
+go: downloading github.com/klauspost/compress v1.20.1
+go: downloading aead.dev/minisign v0.3.0
+go: downloading modernc.org/sqlite v1.60.1
+go: downloading github.com/sabhiram/go-gitignore v0.0.0-20210923224102-525f6e181f06
+go: downloading github.com/yuin/goldmark v1.8.6
+go: downloading go.starlark.net v0.0.0-20260908191801-89a6a09411d5
+go: downloading modernc.org/libc v1.77.1
+go: downloading modernc.org/memory v1.12.1
+go: downloading github.com/dustin/go-humanize v1.0.1
+go: downloading modernc.org/mathutil v1.7.1
+go: downloading github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec
+ok  	reasonix/internal/frontend/serve	1.098s

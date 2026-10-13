@@ -386,3 +386,23 @@ func TestRunProbesFilterSubprocessEnv(t *testing.T) {
 		t.Fatalf("probe leaked filtered env: output = %q", results[0].Output)
 	}
 }
+
+func TestProbesDoNotDownloadToolchainsOrCheckNPMUpdates(t *testing.T) {
+	if runtime.GOOS == "windows" {
+		t.Skip("shell helper requires Unix")
+	}
+	t.Setenv("GOTOOLCHAIN", "auto")
+	t.Setenv("NPM_CONFIG_UPDATE_NOTIFIER", "true")
+	probe := filepath.Join(t.TempDir(), "probe")
+	script := `#!/bin/sh
+[ "$GOTOOLCHAIN" = local ] && [ "$NPM_CONFIG_UPDATE_NOTIFIER" = false ] || exit 1
+printf 'offline version'
+`
+	if err := os.WriteFile(probe, []byte(script), 0700); err != nil {
+		t.Fatal(err)
+	}
+	result := runOne(t.Context(), "probe --version", ProbeOptions{Overrides: map[string]string{"probe": probe}})
+	if !result.Found || result.Output != "offline version" {
+		t.Fatalf("probe: %+v", result)
+	}
+}

@@ -64,7 +64,9 @@ func attachmentServer(t *testing.T, root string) *httptest.Server {
 	t.Helper()
 	bc := NewBroadcaster()
 	ctrl := control.New(control.Options{Runner: fakeRunner{}, Sink: bc, WorkspaceRoot: root})
-	srv := httptest.NewServer(operatorHandler(New(ctrl, bc, config.ServeConfig{})))
+	server := New(ctrl, bc, config.ServeConfig{})
+	server.AllowLocalDesktop()
+	srv := httptest.NewServer(operatorHandler(server))
 	t.Cleanup(srv.Close)
 	return srv
 }

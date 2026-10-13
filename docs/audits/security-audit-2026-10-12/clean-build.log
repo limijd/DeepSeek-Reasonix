@@ -1,0 +1,2 @@
+CGO_ENABLED=0 go build -ldflags "-s -w -X main.version=d1f096b20 -X main.gitCommit=d1f096b206af -X main.buildTimeUTC=2026-10-13T14:28:19Z" -o bin/reasonix ./cmd/reasonix
+CGO_ENABLED=0 go build -ldflags "-s -w -X main.version=d1f096b20 -X main.gitCommit=d1f096b206af -X main.buildTimeUTC=2026-10-13T14:28:19Z" -o bin/reasonix-plugin-example ./cmd/reasonix-plugin-example

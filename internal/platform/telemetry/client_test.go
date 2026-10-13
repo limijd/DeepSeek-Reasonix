@@ -289,7 +289,7 @@ func TestTurnTokenCountersSurviveTheUploadAllowList(t *testing.T) {
 	}})
 	sink.Emit(event.Event{Kind: event.TurnDone})
 
-	posted := flushCollecting(t, home)
+	posted := flushCollecting(t, home, surface.Desktop)
 	if len(posted) != 1 {
 		t.Fatalf("posted %d payloads, want 1", len(posted))
 	}
@@ -323,8 +323,10 @@ func TestFlushDoesNotFoldOneSurfaceIntoAnother(t *testing.T) {
 	}
 
 	seen := map[string]int{}
-	for _, payload := range flushCollecting(t, home) {
-		seen[payload.Surface]++
+	for _, from := range []surface.Surface{surface.CLI, surface.Desktop, surface.Serve} {
+		for _, payload := range flushCollecting(t, home, from) {
+			seen[payload.Surface]++
+		}
 	}
 	for _, from := range []surface.Surface{surface.CLI, surface.Desktop, surface.Serve} {
 		if seen[from.String()] != 1 {
@@ -349,7 +351,7 @@ func TestFlushTreatsAQueueWithoutSurfaceAsCLI(t *testing.T) {
 	}
 }
 
-func flushCollecting(t *testing.T, home string) []metricsPayload {
+func flushCollecting(t *testing.T, home string, from ...surface.Surface) []metricsPayload {
 	t.Helper()
 	var mu sync.Mutex
 	var posted []metricsPayload
@@ -366,6 +368,9 @@ func flushCollecting(t *testing.T, home string) []metricsPayload {
 		mu.Unlock()
 		return telemetryResponse(http.StatusAccepted), nil
 	}))
+	if len(from) != 0 {
+		client.surface = from[0]
+	}
 	if err := client.flushPending(context.Background()); err != nil {
 		t.Fatal(err)
 	}

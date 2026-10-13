@@ -11,6 +11,8 @@ import (
 	"net/url"
 	"strings"
 	"time"
+
+	"reasonix/internal/base/netpolicy"
 )
 
 // Probe is one step of a connectivity check. A misconfigured proxy otherwise
@@ -33,6 +35,9 @@ func Diagnose(ctx context.Context, spec ProxySpec, endpoint string) []Probe {
 	target, err := url.Parse(strings.TrimSpace(endpoint))
 	if err != nil || target.Host == "" {
 		return append(out, Probe{Step: "dns", Detail: fmt.Sprintf("读不懂这个地址：%s", endpoint)})
+	}
+	if err := netpolicy.CheckURL(target); err != nil {
+		return append(out, Probe{Step: "proxy", Detail: err.Error()})
 	}
 
 	resolved, perr := ProxyFunc(spec)
@@ -61,6 +66,9 @@ func Diagnose(ctx context.Context, spec ProxySpec, endpoint string) []Probe {
 		}
 	}
 
+	if err := netpolicy.CheckAddress(net.JoinHostPort(host, port)); err != nil {
+		return append(out, Probe{Step: "connect", Detail: err.Error()})
+	}
 	started := time.Now()
 	addrs, err := net.DefaultResolver.LookupHost(ctx, host)
 	dns := Probe{Step: "dns", OK: err == nil, DurationMs: since(started)}

@@ -3,6 +3,8 @@ package egress
 import (
 	"net"
 	"strings"
+
+	"reasonix/internal/base/netpolicy"
 )
 
 // Reason is why a connection was refused. It crosses to the client as the
@@ -33,6 +35,9 @@ type Policy struct {
 // Decide returns the refusal for host, or "" when the policy admits it.
 func (p Policy) Decide(host string) Reason {
 	host = normalizeHost(host)
+	if netpolicy.Active() && !netpolicy.AllowedHost(host) {
+		return ReasonDenied
+	}
 	if host == "" {
 		return ReasonNotAllowed
 	}

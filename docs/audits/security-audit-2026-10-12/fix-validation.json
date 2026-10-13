@@ -1,0 +1,125 @@
+{
+  "scope": "Full root Go module test run, Go 1.26.9, umask 022; tests/subtests count separately; SDK and desktop nested modules are excluded.",
+  "counts": {
+    "skip_package": 17,
+    "pass_test": 18805,
+    "pass_package": 186,
+    "skip_test": 206,
+    "fail_test": 4,
+    "fail_package": 3
+  },
+  "failures": [
+    {
+      "Package": "reasonix/cmd/e2ebench",
+      "Test": "TestMemoryBenchRequiresReadSandbox"
+    },
+    {
+      "Package": "reasonix/internal/platform/remote/bootstrap",
+      "Test": "TestCaptureScriptThroughRealShells//bin/bash.bash_profile"
+    },
+    {
+      "Package": "reasonix/internal/platform/remote/bootstrap",
+      "Test": "TestCaptureScriptThroughRealShells"
+    },
+    {
+      "Package": "reasonix/internal/platform/remote/bootstrap"
+    },
+    {
+      "Package": "reasonix/cmd/e2ebench"
+    },
+    {
+      "Package": "reasonix/internal/frontend/serve",
+      "Test": "TestCheckProviderReportsWhatTheEndpointSaid"
+    },
+    {
+      "Package": "reasonix/internal/frontend/serve"
+    }
+  ],
+  "failure_output": [
+    {
+      "Time": "2026-10-12T13:39:01.412685429-05:00",
+      "Action": "output",
+      "Package": "reasonix/cmd/e2ebench",
+      "Test": "TestMemoryBenchRequiresReadSandbox",
+      "Output": "    answer_isolation_test.go:40: MemoryBench accepted a state root inside the forbidden checkout\n"
+    },
+    {
+      "Time": "2026-10-12T13:39:01.412718069-05:00",
+      "Action": "output",
+      "Package": "reasonix/cmd/e2ebench",
+      "Test": "TestMemoryBenchRequiresReadSandbox",
+      "Output": "--- FAIL: TestMemoryBenchRequiresReadSandbox (0.02s)\n"
+    },
+    {
+      "Time": "2026-10-12T13:39:06.201821617-05:00",
+      "Action": "output",
+      "Package": "reasonix/internal/platform/remote/bootstrap",
+      "Test": "TestCaptureScriptThroughRealShells//bin/bash.bash_profile",
+      "Output": "    loginenv_shell_test.go:61: env = {Outcome:1 Path:[/usr/bin /bin]}\n"
+    },
+    {
+      "Time": "2026-10-12T13:39:06.201880163-05:00",
+      "Action": "output",
+      "Package": "reasonix/internal/platform/remote/bootstrap",
+      "Test": "TestCaptureScriptThroughRealShells//bin/bash.bash_profile",
+      "Output": "--- FAIL: TestCaptureScriptThroughRealShells//bin/bash.bash_profile (0.35s)\n"
+    },
+    {
+      "Time": "2026-10-12T13:39:06.896227432-05:00",
+      "Action": "output",
+      "Package": "reasonix/internal/platform/remote/bootstrap",
+      "Test": "TestCaptureScriptThroughRealShells",
+      "Output": "--- FAIL: TestCaptureScriptThroughRealShells (1.04s)\n"
+    },
+    {
+      "Time": "2026-10-12T13:39:07.02384323-05:00",
+      "Action": "output",
+      "Package": "reasonix/internal/platform/remote/bootstrap",
+      "Output": "FAIL\n"
+    },
+    {
+      "Time": "2026-10-12T13:39:07.025862578-05:00",
+      "Action": "output",
+      "Package": "reasonix/internal/platform/remote/bootstrap",
+      "Output": "FAIL\treasonix/internal/platform/remote/bootstrap\t2.245s\n"
+    },
+    {
+      "Time": "2026-10-12T13:39:30.554825778-05:00",
+      "Action": "output",
+      "Package": "reasonix/cmd/e2ebench",
+      "Output": "FAIL\n"
+    },
+    {
+      "Time": "2026-10-12T13:39:30.557140934-05:00",
+      "Action": "output",
+      "Package": "reasonix/cmd/e2ebench",
+      "Output": "FAIL\treasonix/cmd/e2ebench\t29.180s\n"
+    },
+    {
+      "Time": "2026-10-12T13:39:37.789067176-05:00",
+      "Action": "output",
+      "Package": "reasonix/internal/frontend/serve",
+      "Test": "TestCheckProviderReportsWhatTheEndpointSaid",
+      "Output": "    provider_check_test.go:41: code = \"provider.probe.timeout\", want the typed identity of an unreachable endpoint\n"
+    },
+    {
+      "Time": "2026-10-12T13:39:37.789176098-05:00",
+      "Action": "output",
+      "Package": "reasonix/internal/frontend/serve",
+      "Test": "TestCheckProviderReportsWhatTheEndpointSaid",
+      "Output": "--- FAIL: TestCheckProviderReportsWhatTheEndpointSaid (20.01s)\n"
+    },
+    {
+      "Time": "2026-10-12T13:39:49.436945263-05:00",
+      "Action": "output",
+      "Package": "reasonix/internal/frontend/serve",
+      "Output": "FAIL\n"
+    },
+    {
+      "Time": "2026-10-12T13:39:49.454689129-05:00",
+      "Action": "output",
+      "Package": "reasonix/internal/frontend/serve",
+      "Output": "FAIL\treasonix/internal/frontend/serve\t44.741s\n"
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import (
 	"os"
 	"runtime/debug"
 
+	"reasonix/internal/base/netpolicy"
 	"reasonix/internal/contract/config"
 	"reasonix/internal/contract/provider"
 	"reasonix/internal/frontend/cli"
@@ -37,6 +38,7 @@ var runCLI = func(args []string, buildVersion string) int {
 }
 
 func main() {
+	netpolicy.Enable()
 	provider.SetClientVersion(version)
 	os.Exit(runWithCrashCapture(os.Args[1:], version))
 }

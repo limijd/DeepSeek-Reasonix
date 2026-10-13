@@ -11,6 +11,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"reasonix/internal/base/netpolicy"
 	"regexp"
 	"strings"
 	"sync"
@@ -188,6 +189,9 @@ func (s *notesState) fetch(rq notesRequest, key, url string, fl *notesFlight) {
 }
 
 func fetchNotes(ctx context.Context, c *http.Client, url, userAgent string) (string, error) {
+	if netpolicy.Active() {
+		return "", fmt.Errorf("%w: %w", ErrNotesUnreachable, netpolicy.ErrBlocked)
+	}
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {
 		return "", fmt.Errorf("%w: %w", ErrNotesUnreachable, err)

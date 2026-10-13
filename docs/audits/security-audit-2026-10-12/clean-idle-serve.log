@@ -1,0 +1,5 @@
+reasonix serve — deepseek-flash on http://127.0.0.1:35847
+  auth: token
+  share: http://127.0.0.1:35847/#token=<token> (token in /tmp/reasonix-clean-idle-jr7vworg/state/remote/launch-1360796.token)
+  balance: not configured (no balance_url for this provider)
+2026/10/13 09:30:33 INFO serve: shutting down gracefully

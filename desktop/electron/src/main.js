@@ -1,5 +1,6 @@
 "use strict";
 const { app, BrowserWindow, dialog, ipcMain, nativeTheme, powerSaveBlocker, screen, session, shell } = require("electron");
+const { installNetworkPolicy } = require("./networkpolicy");
 const { relaunchForOzonePlatform } = require("./ozone");
 
 // Before the instance lock: this process must hold nothing its relaunch needs.
@@ -497,6 +498,7 @@ if (!primary) {
 }
 
 app.whenReady().then(() => {
+  installNetworkPolicy(session.defaultSession);
   if (!primary) return;
   installApplicationMenu(uiLang);
   boot().catch((err) => {

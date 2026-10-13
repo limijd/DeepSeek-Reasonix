@@ -1,0 +1,1776 @@
+{
+  "scope": "Tracked production source and build configuration literals; includes examples/comments; does not prove runtime connections",
+  "commit": "d1f096b206af471f558029fc11316c21ee6aae57",
+  "entries": [
+    {
+      "file": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "line": 11,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/discussions/10748"
+    },
+    {
+      "file": ".github/ISSUE_TEMPLATE/config.yml",
+      "line": 4,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/discussions/10748"
+    },
+    {
+      "file": ".github/ISSUE_TEMPLATE/config.yml",
+      "line": 7,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/discussions"
+    },
+    {
+      "file": ".github/ISSUE_TEMPLATE/config.yml",
+      "line": 10,
+      "literal": "https://discord.gg/XF78rEME2D"
+    },
+    {
+      "file": ".github/ISSUE_TEMPLATE/config.yml",
+      "line": 13,
+      "literal": "https://qm.qq.com/q/i59b0z2R8s"
+    },
+    {
+      "file": ".github/actions/setup-certum/action.yml",
+      "line": 20,
+      "literal": "https://files.certum.eu/software/SimplySignDesktop/Windows/9.4.3.90/SimplySignDesktop-9.4.3.90-64-bit-en.msi"
+    },
+    {
+      "file": ".github/workflows/deploy-web-studio.yml",
+      "line": 42,
+      "literal": "https://reasonix.io/remote/"
+    },
+    {
+      "file": ".github/workflows/e2e-bot.yml",
+      "line": 120,
+      "literal": "https://api.deepseek.com"
+    },
+    {
+      "file": ".github/workflows/feedback-sync.yml",
+      "line": 66,
+      "literal": "https://reasonix-crash-report.reasonix.workers.dev"
+    },
+    {
+      "file": ".github/workflows/issue-auto-label.yml",
+      "line": 61,
+      "literal": "https://api.deepseek.com/chat/completions"
+    },
+    {
+      "file": ".github/workflows/release-studio.yml",
+      "line": 1223,
+      "literal": "https://${{"
+    },
+    {
+      "file": ".github/workflows/release-studio.yml",
+      "line": 1257,
+      "literal": "https://dl.reasonix.io/${notes_key}"
+    },
+    {
+      "file": ".github/workflows/release-studio.yml",
+      "line": 1410,
+      "literal": "https://registry.npmjs.org"
+    },
+    {
+      "file": ".github/workflows/release-studio.yml",
+      "line": 1429,
+      "literal": "https://x-access-token:${TAP_TOKEN}@github.com/esengine/homebrew-reasonix.git"
+    },
+    {
+      "file": ".github/workflows/studio.yml",
+      "line": 137,
+      "literal": "http://localhost:4399/perf.html"
+    },
+    {
+      "file": ".github/workflows/withdraw-studio-version.yml",
+      "line": 61,
+      "literal": "https://${{"
+    },
+    {
+      "file": "cmd/e2ebench/serve.go",
+      "line": 71,
+      "literal": "http://%s"
+    },
+    {
+      "file": "cmd/signpath-contract/main.go",
+      "line": 22,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix.git"
+    },
+    {
+      "file": "desktop/cmd/sign/main.go",
+      "line": 198,
+      "literal": "https://reasonix.io/?download=desktop#start"
+    },
+    {
+      "file": "desktop/cmd/sign/main.go",
+      "line": 199,
+      "literal": "https://reasonix.io/changelog/"
+    },
+    {
+      "file": "desktop/cmd/sign/main.go",
+      "line": 222,
+      "literal": "https://github.com/%s/releases/download/%s/%s"
+    },
+    {
+      "file": "desktop/cmd/studio-manifest/main.go",
+      "line": 48,
+      "literal": "https://github.com/%s/releases/tag/%s"
+    },
+    {
+      "file": "desktop/cmd/studio-manifest/main.go",
+      "line": 127,
+      "literal": "https://github.com/%s/releases/download/%s/%s"
+    },
+    {
+      "file": "desktop/electron/package.json",
+      "line": 6,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix"
+    },
+    {
+      "file": "desktop/frontend-next/index.html",
+      "line": 6,
+      "literal": "https://id.reasonix.io"
+    },
+    {
+      "file": "desktop/frontend-next/index.html",
+      "line": 7,
+      "literal": "https://remote.reasonix.io"
+    },
+    {
+      "file": "desktop/frontend-next/index.html",
+      "line": 67,
+      "literal": "https://id.reasonix.io/me/remote-grants"
+    },
+    {
+      "file": "desktop/frontend-next/index.html",
+      "line": 111,
+      "literal": "http://www.w3.org/2000/svg"
+    },
+    {
+      "file": "desktop/frontend-next/src/boot/shards.ts",
+      "line": 1,
+      "literal": "http://www.w3.org/2000/svg"
+    },
+    {
+      "file": "desktop/frontend-next/src/i18n/en_settings.ts",
+      "line": 569,
+      "literal": "https://你的地址/v1"
+    },
+    {
+      "file": "desktop/frontend-next/src/i18n/en_settings.ts",
+      "line": 569,
+      "literal": "https://your-host/v1"
+    },
+    {
+      "file": "desktop/frontend-next/src/i18n/en_settings.ts",
+      "line": 979,
+      "literal": "https://github.com/owner/repo/tree/（40"
+    },
+    {
+      "file": "desktop/frontend-next/src/i18n/en_settings.ts",
+      "line": 979,
+      "literal": "https://github.com/owner/repo/tree/(40-character"
+    },
+    {
+      "file": "desktop/frontend-next/src/port/cloud_remote.ts",
+      "line": 8,
+      "literal": "https://id.reasonix.io"
+    },
+    {
+      "file": "desktop/frontend-next/src/port/cloud_remote.ts",
+      "line": 9,
+      "literal": "wss://remote.reasonix.io"
+    },
+    {
+      "file": "desktop/frontend-next/src/port/cloud_remote.ts",
+      "line": 10,
+      "literal": "https://reasonix.io/remote/"
+    },
+    {
+      "file": "desktop/frontend-next/src/port/feedback.ts",
+      "line": 173,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/issues/"
+    },
+    {
+      "file": "desktop/frontend-next/src/port/fixture.ts",
+      "line": 189,
+      "literal": "https://github.com/xiaomimimo/MiMo/issues/218"
+    },
+    {
+      "file": "desktop/frontend-next/src/port/fixture.ts",
+      "line": 191,
+      "literal": "https://platform.xiaomi.com/docs/mimo/errors"
+    },
+    {
+      "file": "desktop/frontend-next/src/port/fixture.ts",
+      "line": 193,
+      "literal": "https://reasonix.io/blog/never-delete-keys"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/AddPlugin.tsx",
+      "line": 10,
+      "literal": "https://github.com/acme/review-kit"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/AddProvider.tsx",
+      "line": 244,
+      "literal": "https://api.moonshot.cn/v1"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/AddProvider.tsx",
+      "line": 344,
+      "literal": "https://example.com"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/AddServer.tsx",
+      "line": 14,
+      "literal": "https://mcp.example.com/sse"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/BrowserPanel.tsx",
+      "line": 21,
+      "literal": "http://${raw}"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/BrowserPanel.tsx",
+      "line": 21,
+      "literal": "https://${raw}"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/EditConn.tsx",
+      "line": 488,
+      "literal": "https://example.com"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/FeedbackForm.tsx",
+      "line": 15,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/security/policy"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/MarketPublish.tsx",
+      "line": 12,
+      "literal": "https://github.com/owner/repo/tree/（40"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/MarketPublish.tsx",
+      "line": 163,
+      "literal": "https://github.com/…"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 29,
+      "literal": "https://api.deepseek.com"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 30,
+      "literal": "https://platform.deepseek.com/api_keys"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 32,
+      "literal": "https://api.deepseek.com"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 33,
+      "literal": "https://api.deepseek.com"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 34,
+      "literal": "https://api.deepseek.com/anthropic"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 37,
+      "literal": "https://api.siliconflow.cn/v1"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 37,
+      "literal": "https://cloud.siliconflow.cn"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 38,
+      "literal": "https://api.moonshot.cn/v1"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 38,
+      "literal": "https://platform.moonshot.cn"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 39,
+      "literal": "https://open.bigmodel.cn/api/paas/v4"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 39,
+      "literal": "https://bigmodel.cn/usercenter/proj-mgmt/apikeys"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 40,
+      "literal": "https://api.xiaomimimo.com/v1"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 40,
+      "literal": "https://platform.xiaomimimo.com"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 41,
+      "literal": "https://api.longcat.chat/openai"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 41,
+      "literal": "https://longcat.chat/platform"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/Onboarding.tsx",
+      "line": 219,
+      "literal": "https://你的地址/v1"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/communityLinks.ts",
+      "line": 1,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/communityLinks.ts",
+      "line": 6,
+      "literal": "https://qm.qq.com/q/i59b0z2R8s"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/communityLinks.ts",
+      "line": 10,
+      "literal": "https://github.com/esengine"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/communityLinks.ts",
+      "line": 11,
+      "literal": "https://discord.gg/XF78rEME2D"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/communityLinks.ts",
+      "line": 12,
+      "literal": "https://paypal.me/yuhuahui"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/communityLinks.ts",
+      "line": 21,
+      "literal": "https://github.com/${login}"
+    },
+    {
+      "file": "desktop/frontend-next/src/ui/versionFailure.ts",
+      "line": 56,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/releases/tag/studio-v${v.replace(/^v/,"
+    },
+    {
+      "file": "desktop/frontend-next/tools/audit-sweep.mjs",
+      "line": 20,
+      "literal": "http://127.0.0.1:8791"
+    },
+    {
+      "file": "desktop/frontend-next/tools/audit-sweep.mjs",
+      "line": 22,
+      "literal": "http://localhost:5177/"
+    },
+    {
+      "file": "desktop/frontend-next/tools/audit-sweep.mjs",
+      "line": 37,
+      "literal": "http://127.0.0.1:9333/json/list"
+    },
+    {
+      "file": "desktop/frontend-next/tools/contrast-sweep.mjs",
+      "line": 12,
+      "literal": "http://localhost:5177/"
+    },
+    {
+      "file": "desktop/frontend-next/tools/contrast-sweep.mjs",
+      "line": 22,
+      "literal": "http://127.0.0.1:9333/json/list"
+    },
+    {
+      "file": "desktop/frontend-next/tools/fault-sweep.mjs",
+      "line": 20,
+      "literal": "http://127.0.0.1:8791"
+    },
+    {
+      "file": "desktop/frontend-next/tools/fault-sweep.mjs",
+      "line": 22,
+      "literal": "http://localhost:5177/"
+    },
+    {
+      "file": "desktop/frontend-next/tools/fault-sweep.mjs",
+      "line": 36,
+      "literal": "http://localhost:5177/"
+    },
+    {
+      "file": "desktop/frontend-next/tools/fault-sweep.mjs",
+      "line": 38,
+      "literal": "http://127.0.0.1:9333/json/list"
+    },
+    {
+      "file": "desktop/frontend-next/tools/fixture-onboard.js",
+      "line": 35,
+      "literal": "https://api.deepseek.com"
+    },
+    {
+      "file": "desktop/frontend-next/tools/i18n-sweep.mjs",
+      "line": 14,
+      "literal": "http://127.0.0.1:8791"
+    },
+    {
+      "file": "desktop/frontend-next/tools/i18n-sweep.mjs",
+      "line": 16,
+      "literal": "http://localhost:5177/"
+    },
+    {
+      "file": "desktop/frontend-next/tools/i18n-sweep.mjs",
+      "line": 23,
+      "literal": "http://127.0.0.1:9333"
+    },
+    {
+      "file": "internal/base/i18n/messages_en.go",
+      "line": 749,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/releases?q=studio-v&expanded=true"
+    },
+    {
+      "file": "internal/base/i18n/messages_zh.go",
+      "line": 749,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/releases?q=studio-v&expanded=true"
+    },
+    {
+      "file": "internal/base/i18n/messages_zh_tw.go",
+      "line": 671,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/releases?q=studio-v&expanded=true"
+    },
+    {
+      "file": "internal/contract/config/deepseek_catalog.go",
+      "line": 40,
+      "literal": "https://api.deepseek.com/user/balance"
+    },
+    {
+      "file": "internal/contract/config/deepseek_catalog.go",
+      "line": 48,
+      "literal": "https://api.deepseek.com/user/balance"
+    },
+    {
+      "file": "internal/contract/config/deepseek_presets.go",
+      "line": 25,
+      "literal": "https://api.deepseek.com/user/balance"
+    },
+    {
+      "file": "internal/contract/config/deepseek_presets.go",
+      "line": 48,
+      "literal": "https://api.deepseek.com"
+    },
+    {
+      "file": "internal/contract/config/deepseek_presets.go",
+      "line": 53,
+      "literal": "https://api.deepseek.com/user/balance"
+    },
+    {
+      "file": "internal/contract/config/deepseek_protocol_migration.go",
+      "line": 19,
+      "literal": "https://api.deepseek.com/user/balance"
+    },
+    {
+      "file": "internal/contract/config/effort.go",
+      "line": 539,
+      "literal": "https://docs.z.ai/guides/overview/concept-param."
+    },
+    {
+      "file": "internal/contract/config/global_presets.go",
+      "line": 24,
+      "literal": "https://reasonix.io"
+    },
+    {
+      "file": "internal/contract/config/global_presets.go",
+      "line": 39,
+      "literal": "https://openrouter.ai/api/v1"
+    },
+    {
+      "file": "internal/contract/config/global_presets.go",
+      "line": 44,
+      "literal": "https://openrouter.ai/api/v1/credits"
+    },
+    {
+      "file": "internal/contract/config/global_presets.go",
+      "line": 59,
+      "literal": "https://api.openai.com/v1"
+    },
+    {
+      "file": "internal/contract/config/global_presets.go",
+      "line": 77,
+      "literal": "https://generativelanguage.googleapis.com/v1beta/openai"
+    },
+    {
+      "file": "internal/contract/config/global_presets.go",
+      "line": 93,
+      "literal": "https://ark.cn-beijing.volces.com/api/coding/v3"
+    },
+    {
+      "file": "internal/contract/config/load.go",
+      "line": 369,
+      "literal": "https://api.deepseek.com/user/balance"
+    },
+    {
+      "file": "internal/contract/config/load.go",
+      "line": 1022,
+      "literal": "https://api.stepfun.ai/step_plan/v1"
+    },
+    {
+      "file": "internal/contract/config/load.go",
+      "line": 1023,
+      "literal": "https://api.stepfun.com/step_plan/v1"
+    },
+    {
+      "file": "internal/contract/config/load.go",
+      "line": 1024,
+      "literal": "https://api.stepfun.ai/step_plan"
+    },
+    {
+      "file": "internal/contract/config/load.go",
+      "line": 1025,
+      "literal": "https://api.stepfun.com/step_plan"
+    },
+    {
+      "file": "internal/contract/config/load.go",
+      "line": 1303,
+      "literal": "https://api.xiaomimimo.com/v1"
+    },
+    {
+      "file": "internal/contract/config/load.go",
+      "line": 1317,
+      "literal": "https://token-plan-cn.xiaomimimo.com/v1"
+    },
+    {
+      "file": "internal/contract/config/load.go",
+      "line": 1327,
+      "literal": "https://token-plan-cn.xiaomimimo.com/v1"
+    },
+    {
+      "file": "internal/contract/config/load.go",
+      "line": 1329,
+      "literal": "https://token-plan-cn.xiaomimimo.com/v1"
+    },
+    {
+      "file": "internal/contract/config/load.go",
+      "line": 1498,
+      "literal": "https://api.deepseek.com/user/balance"
+    },
+    {
+      "file": "internal/contract/config/mcpjson.go",
+      "line": 213,
+      "literal": "https://url"
+    },
+    {
+      "file": "internal/contract/config/mcpjson.go",
+      "line": 213,
+      "literal": "https://url"
+    },
+    {
+      "file": "internal/contract/config/pricing.go",
+      "line": 158,
+      "literal": "https://api.deepseek.com/user/balance"
+    },
+    {
+      "file": "internal/contract/config/provider_entry.go",
+      "line": 41,
+      "literal": "https://api.deepseek.com/user/balance"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 25,
+      "literal": "https://api.longcat.chat/openai/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 26,
+      "literal": "https://api.longcat.chat/anthropic"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 27,
+      "literal": "https://api.deepseek.com/anthropic"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 198,
+      "literal": "https://api.longcat.chat/openai/v1/models"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 218,
+      "literal": "https://api.longcat.chat/anthropic/v1/models"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 238,
+      "literal": "https://tokenrhythm.studio/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 239,
+      "literal": "https://tokenrhythm.studio/v1/models"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 256,
+      "literal": "https://api.moonshot.cn/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 261,
+      "literal": "https://api.moonshot.cn/v1/users/me/balance"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 277,
+      "literal": "https://api.moonshot.ai/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 282,
+      "literal": "https://api.moonshot.ai/v1/users/me/balance"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 298,
+      "literal": "https://api.kimi.com/coding/"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 317,
+      "literal": "https://api.minimaxi.com/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 334,
+      "literal": "https://api.minimax.io/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 351,
+      "literal": "https://api.minimaxi.com/anthropic"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 368,
+      "literal": "https://api.minimax.io/anthropic"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 385,
+      "literal": "https://open.bigmodel.cn/api/paas/v4"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 401,
+      "literal": "https://api.z.ai/api/paas/v4"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 417,
+      "literal": "https://open.bigmodel.cn/api/coding/paas/v4"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 433,
+      "literal": "https://open.bigmodel.cn/api/anthropic"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 451,
+      "literal": "https://api.z.ai/api/coding/paas/v4"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 466,
+      "literal": "https://api.z.ai/api/anthropic"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 483,
+      "literal": "https://opencode.ai/zen/go/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 530,
+      "literal": "https://opencode.ai/zen"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 546,
+      "literal": "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 564,
+      "literal": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 581,
+      "literal": "https://coding.dashscope.aliyuncs.com/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 599,
+      "literal": "https://coding.dashscope.aliyuncs.com/apps/anthropic"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 618,
+      "literal": "https://coding-intl.dashscope.aliyuncs.com/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 635,
+      "literal": "https://coding-intl.dashscope.aliyuncs.com/apps/anthropic"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 653,
+      "literal": "https://api.stepfun.com/step_plan/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 669,
+      "literal": "https://api.stepfun.com/step_plan"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 686,
+      "literal": "https://api.novita.ai/openai/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 700,
+      "literal": "https://api.gmi-serving.com/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 715,
+      "literal": "https://ai-gateway.vercel.sh"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 732,
+      "literal": "https://router.huggingface.co/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 746,
+      "literal": "https://integrate.api.nvidia.com/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 760,
+      "literal": "https://api.kilo.ai/api/gateway"
+    },
+    {
+      "file": "internal/contract/config/provider_presets.go",
+      "line": 774,
+      "literal": "https://ollama.com/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets_mimo.go",
+      "line": 28,
+      "literal": "https://api.xiaomimimo.com/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets_mimo.go",
+      "line": 46,
+      "literal": "https://api.xiaomimimo.com/anthropic"
+    },
+    {
+      "file": "internal/contract/config/provider_presets_mimo.go",
+      "line": 65,
+      "literal": "https://token-plan-cn.xiaomimimo.com/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets_mimo.go",
+      "line": 83,
+      "literal": "https://token-plan-cn.xiaomimimo.com/anthropic"
+    },
+    {
+      "file": "internal/contract/config/provider_presets_mimo.go",
+      "line": 102,
+      "literal": "https://token-plan-sgp.xiaomimimo.com/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets_mimo.go",
+      "line": 119,
+      "literal": "https://token-plan-sgp.xiaomimimo.com/anthropic"
+    },
+    {
+      "file": "internal/contract/config/provider_presets_mimo.go",
+      "line": 137,
+      "literal": "https://token-plan-ams.xiaomimimo.com/v1"
+    },
+    {
+      "file": "internal/contract/config/provider_presets_mimo.go",
+      "line": 154,
+      "literal": "https://token-plan-ams.xiaomimimo.com/anthropic"
+    },
+    {
+      "file": "internal/contract/config/provider_presets_opencode_go.go",
+      "line": 11,
+      "literal": "https://opencode.ai/zen/go"
+    },
+    {
+      "file": "internal/contract/config/provider_presets_opencode_go.go",
+      "line": 29,
+      "literal": "https://opencode.ai/zen/go"
+    },
+    {
+      "file": "internal/contract/config/provider_presets_opencode_go.go",
+      "line": 49,
+      "literal": "https://opencode.ai/zen/go/v1"
+    },
+    {
+      "file": "internal/contract/config/render.go",
+      "line": 361,
+      "literal": "https://mcp.stripe.com"
+    },
+    {
+      "file": "internal/contract/config/systemone_migrate.go",
+      "line": 8,
+      "literal": "https://api.typesafe.ai"
+    },
+    {
+      "file": "internal/contract/config/web_search_model.go",
+      "line": 150,
+      "literal": "https://api.deepseek.com/anthropic"
+    },
+    {
+      "file": "internal/contract/pricing/catalog.go",
+      "line": 81,
+      "literal": "https://api-docs.deepseek.com/quick_start/pricing"
+    },
+    {
+      "file": "internal/contract/pricing/catalog.go",
+      "line": 82,
+      "literal": "https://longcat.chat/platform/docs/Pricing/LongCat-2.0.html"
+    },
+    {
+      "file": "internal/contract/pricing/catalog.go",
+      "line": 83,
+      "literal": "https://longcat.chat/platform/docs/zh/pricing/long-cat-2.0"
+    },
+    {
+      "file": "internal/contract/pricing/catalog.go",
+      "line": 84,
+      "literal": "https://mimo.mi.com/docs/price/pay-as-you-go"
+    },
+    {
+      "file": "internal/contract/pricing/catalog.go",
+      "line": 85,
+      "literal": "https://platform.xiaomimimo.com/token-plan"
+    },
+    {
+      "file": "internal/contract/provider/schema_dialect.go",
+      "line": 147,
+      "literal": "https://json-schema.org/draft/2020-12/schema"
+    },
+    {
+      "file": "internal/contract/provider/zhipu_effort.go",
+      "line": 7,
+      "literal": "https://docs.z.ai/guides/overview/concept-param"
+    },
+    {
+      "file": "internal/ext/extension/protocol/schema.generated.json",
+      "line": 1,
+      "literal": "https://json-schema.org/draft/2020-12/schema"
+    },
+    {
+      "file": "internal/ext/extension/protocol/schema.go",
+      "line": 14,
+      "literal": "https://json-schema.org/draft/2020-12/schema"
+    },
+    {
+      "file": "internal/ext/hook/hook.go",
+      "line": 86,
+      "literal": "https://code.claude.com/docs/en/hooks"
+    },
+    {
+      "file": "internal/ext/hook/hook.go",
+      "line": 486,
+      "literal": "https://code.claude.com/docs/en/tools-reference"
+    },
+    {
+      "file": "internal/ext/hook/hook.go",
+      "line": 892,
+      "literal": "https://code.claude.com/docs/en/hooks."
+    },
+    {
+      "file": "internal/ext/installsource/names.go",
+      "line": 86,
+      "literal": "https://raw.githubusercontent.com/"
+    },
+    {
+      "file": "internal/ext/installsource/names.go",
+      "line": 89,
+      "literal": "https://raw.githubusercontent.com/"
+    },
+    {
+      "file": "internal/ext/installsource/plan.go",
+      "line": 20,
+      "literal": "https://api.github.com"
+    },
+    {
+      "file": "internal/ext/installsource/plan.go",
+      "line": 26,
+      "literal": "https://github.com/"
+    },
+    {
+      "file": "internal/ext/installsource/plan.go",
+      "line": 132,
+      "literal": "https://raw.githubusercontent.com/%s/%s/%s/%s"
+    },
+    {
+      "file": "internal/ext/installsource/plugin_package.go",
+      "line": 189,
+      "literal": "https://github.com/%s/%s/tree/%s/%s"
+    },
+    {
+      "file": "internal/ext/installsource/plugin_package.go",
+      "line": 503,
+      "literal": "https://github.com/"
+    },
+    {
+      "file": "internal/ext/installsource/plugin_package.go",
+      "line": 532,
+      "literal": "https://github.com/%s/%s.git"
+    },
+    {
+      "file": "internal/ext/market/install.go",
+      "line": 258,
+      "literal": "https://github.com/"
+    },
+    {
+      "file": "internal/ext/market/install.go",
+      "line": 268,
+      "literal": "https://github.com/"
+    },
+    {
+      "file": "internal/ext/mcpregistry/registry.go",
+      "line": 24,
+      "literal": "https://registry.modelcontextprotocol.io"
+    },
+    {
+      "file": "internal/ext/mcpsetup/argv.go",
+      "line": 16,
+      "literal": "https://example.com/mcp"
+    },
+    {
+      "file": "internal/ext/plugin/launcher_lock.go",
+      "line": 41,
+      "literal": "https://pypi.org/pypi"
+    },
+    {
+      "file": "internal/ext/plugin/launcher_lock.go",
+      "line": 346,
+      "literal": "https://,"
+    },
+    {
+      "file": "internal/ext/pluginpkg/claude_compat.go",
+      "line": 54,
+      "literal": "https://code.claude.com/docs/en/hooks"
+    },
+    {
+      "file": "internal/ext/pluginpkg/claude_compat.go",
+      "line": 69,
+      "literal": "https://code.claude.com/docs/en/tools-reference"
+    },
+    {
+      "file": "internal/frontend/acp/protocol.go",
+      "line": 1,
+      "literal": "https://agentclientprotocol.com"
+    },
+    {
+      "file": "internal/frontend/acp/protocol.go",
+      "line": 205,
+      "literal": "https://agentclientprotocol.com"
+    },
+    {
+      "file": "internal/frontend/cli/mcp.go",
+      "line": 508,
+      "literal": "https://example.com/mcp"
+    },
+    {
+      "file": "internal/frontend/cli/mcp.go",
+      "line": 528,
+      "literal": "https://mcp.stripe.com"
+    },
+    {
+      "file": "internal/frontend/cli/serve_frontend.go",
+      "line": 173,
+      "literal": "http://%s"
+    },
+    {
+      "file": "internal/frontend/cli/serve_frontend.go",
+      "line": 275,
+      "literal": "https://agent.example.com"
+    },
+    {
+      "file": "internal/frontend/cli/serve_qr.go",
+      "line": 85,
+      "literal": "https://…"
+    },
+    {
+      "file": "internal/frontend/cli/tui_command.go",
+      "line": 27,
+      "literal": "http://reasonix.local/rt/r1"
+    },
+    {
+      "file": "internal/frontend/cli/upgrade.go",
+      "line": 35,
+      "literal": "https://api.github.com/repos/"
+    },
+    {
+      "file": "internal/frontend/cli/upgrade.go",
+      "line": 36,
+      "literal": "https://github.com/"
+    },
+    {
+      "file": "internal/frontend/cli/upgrade.go",
+      "line": 37,
+      "literal": "https://crash.reasonix.io/v1/cli/releases"
+    },
+    {
+      "file": "internal/frontend/serve/device_gate.go",
+      "line": 37,
+      "literal": "http://192.168.1.20:41234."
+    },
+    {
+      "file": "internal/frontend/serve/device_share.go",
+      "line": 250,
+      "literal": "https://reasonix.io/remote/?device="
+    },
+    {
+      "file": "internal/frontend/serve/loopback.go",
+      "line": 30,
+      "literal": "http://127.0.0.1:"
+    },
+    {
+      "file": "internal/frontend/serve/qrcode.go",
+      "line": 22,
+      "literal": "http://www.w3.org/2000/svg"
+    },
+    {
+      "file": "internal/frontend/tui/client.go",
+      "line": 46,
+      "literal": "http://reasonix.local/rt/r1;"
+    },
+    {
+      "file": "internal/model/anthropic/anthropic.go",
+      "line": 52,
+      "literal": "https://api.anthropic.com"
+    },
+    {
+      "file": "internal/model/anthropic/anthropic.go",
+      "line": 79,
+      "literal": "https://proxy.example.com/v1"
+    },
+    {
+      "file": "internal/model/anthropic/anthropic.go",
+      "line": 83,
+      "literal": "https://proxy.example.com/v1"
+    },
+    {
+      "file": "internal/model/anthropic/anthropic.go",
+      "line": 85,
+      "literal": "https://proxy.example.com/v1/v1/messages"
+    },
+    {
+      "file": "internal/model/billing/shape.go",
+      "line": 73,
+      "literal": "https://platform.moonshot.cn/docs/api/misc"
+    },
+    {
+      "file": "internal/model/openai/glm_effort.go",
+      "line": 12,
+      "literal": "https://docs.z.ai/guides/overview/concept-param"
+    },
+    {
+      "file": "internal/platform/account/account.go",
+      "line": 26,
+      "literal": "https://id.reasonix.io"
+    },
+    {
+      "file": "internal/platform/browser/engine.go",
+      "line": 157,
+      "literal": "ws://127.0.0.1:"
+    },
+    {
+      "file": "internal/platform/crashreport/cli.go",
+      "line": 42,
+      "literal": "https://crash.reasonix.io/v1/report"
+    },
+    {
+      "file": "internal/platform/feedback/service.go",
+      "line": 24,
+      "literal": "https://crash.reasonix.io"
+    },
+    {
+      "file": "internal/platform/releaseasset/cli.go",
+      "line": 28,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/releases/download"
+    },
+    {
+      "file": "internal/platform/remotecloud/host.go",
+      "line": 28,
+      "literal": "wss://remote.reasonix.io"
+    },
+    {
+      "file": "internal/platform/telemetry/client.go",
+      "line": 24,
+      "literal": "https://crash.reasonix.io/v1"
+    },
+    {
+      "file": "internal/platform/update/manifest.go",
+      "line": 35,
+      "literal": "https://dl.reasonix.io"
+    },
+    {
+      "file": "internal/safety/typesafe/client.go",
+      "line": 18,
+      "literal": "https://api.typesafe.ai"
+    },
+    {
+      "file": "npm/build.mjs",
+      "line": 79,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix.git"
+    },
+    {
+      "file": "npm/reasonix/bin/reasonix.js",
+      "line": 14,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix"
+    },
+    {
+      "file": "npm/reasonix/package.json",
+      "line": 15,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix#readme"
+    },
+    {
+      "file": "npm/reasonix/package.json",
+      "line": 18,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix.git"
+    },
+    {
+      "file": "npm/reasonix/package.json",
+      "line": 21,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/issues"
+    },
+    {
+      "file": "scripts/backfill-issue-labels.mjs",
+      "line": 60,
+      "literal": "https://api.deepseek.com/chat/completions"
+    },
+    {
+      "file": "scripts/backfill-studio-notes.sh",
+      "line": 25,
+      "literal": "https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
+    },
+    {
+      "file": "scripts/backfill-studio-notes.sh",
+      "line": 28,
+      "literal": "https://dl.reasonix.io/studio/notes"
+    },
+    {
+      "file": "scripts/decide-cli-release-publication.sh",
+      "line": 77,
+      "literal": "https://github.com/"
+    },
+    {
+      "file": "scripts/decide-cli-release-publication.sh",
+      "line": 86,
+      "literal": "https://github.com/"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 6,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 6,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 14,
+      "literal": "https://crash.reasonix.io/v1/feedback/attachments/abc"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 19,
+      "literal": "https://evil.example/x.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 24,
+      "literal": "https://crash.reasonix.io/v1/feedback/attachments/secret"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 29,
+      "literal": "https://crash.reasonix.io/v1/feedback/attachments/unmarked"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 33,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 33,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 33,
+      "literal": "https://crash.reasonix.io/v1/feedback/attachments/abc"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 34,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 34,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 34,
+      "literal": "https://camo.githubusercontent.com/43bfac94cdb615c3306421886f232a922e0dd5485e5f944197bbd738f3f19bb8/68747470733a2f2f63726173682e726561736f6e69782e696f2f76312f666565646261636b2f6174746163686d656e74732f616263"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 34,
+      "literal": "https://camo.githubusercontent.com/43bfac94cdb615c3306421886f232a922e0dd5485e5f944197bbd738f3f19bb8/68747470733a2f2f63726173682e726561736f6e69782e696f2f76312f666565646261636b2f6174746163686d656e74732f616263"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 34,
+      "literal": "https://crash.reasonix.io/v1/feedback/attachments/abc"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 40,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 40,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 40,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 42,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 42,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 42,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 43,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 43,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 43,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 48,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 48,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 49,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 49,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 50,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 50,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 54,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 54,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 55,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 55,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 56,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 56,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 60,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 60,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 61,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 61,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 62,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 62,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 66,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 66,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 67,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 67,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 68,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 68,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 72,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 72,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 73,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 73,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 74,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 74,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 81,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 81,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 84,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 84,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 85,
+      "literal": "https://evil.example/p.png"
+    },
+    {
+      "file": "scripts/feedback-sync.fixture.json",
+      "line": 85,
+      "literal": "https://evil.example"
+    },
+    {
+      "file": "scripts/feedback-sync.mjs",
+      "line": 17,
+      "literal": "https://crash.reasonix.io"
+    },
+    {
+      "file": "scripts/install-nsis.ps1",
+      "line": 7,
+      "literal": "https://sourceforge.net/projects/nsis/files/NSIS%203/$version/nsis-$version.zip/download"
+    },
+    {
+      "file": "scripts/publish-cli-pointer.sh",
+      "line": 32,
+      "literal": "https://${R2_ACCOUNT_ID:?R2_ACCOUNT_ID"
+    },
+    {
+      "file": "scripts/publish-cli-pointer.sh",
+      "line": 106,
+      "literal": "https://github.com/$repository/releases/tag/$studio_tag"
+    },
+    {
+      "file": "scripts/release-credits.mjs",
+      "line": 157,
+      "literal": "https://api.github.com/graphql"
+    },
+    {
+      "file": "scripts/render-brew-cask.sh",
+      "line": 8,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/releases/download/${tag}"
+    },
+    {
+      "file": "scripts/render-brew-cask.sh",
+      "line": 59,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix"
+    },
+    {
+      "file": "scripts/sign-certum.ps1",
+      "line": 37,
+      "literal": "http://timestamp.certum.pl"
+    },
+    {
+      "file": "scripts/update-acknowledgments.mjs",
+      "line": 7,
+      "literal": "https://api.github.com/repos/${repo}/contributors?per_page=50&anon=1"
+    },
+    {
+      "file": "scripts/update-star-history.mjs",
+      "line": 77,
+      "literal": "https://api.github.com/repos/${repository}/stargazers"
+    },
+    {
+      "file": "scripts/update-star-history.mjs",
+      "line": 223,
+      "literal": "http://www.w3.org/2000/svg"
+    },
+    {
+      "file": "scripts/update-versions-index.sh",
+      "line": 39,
+      "literal": "https://dl.reasonix.io/studio/notes/*.md"
+    },
+    {
+      "file": "scripts/update-versions-index.sh",
+      "line": 41,
+      "literal": "https://dl.reasonix.io/studio/notes/,"
+    },
+    {
+      "file": "scripts/update-versions-index.sh",
+      "line": 91,
+      "literal": "https://dl.reasonix.io/"
+    },
+    {
+      "file": "scripts/validate-cli-release-manifest.sh",
+      "line": 92,
+      "literal": "https://github.com/"
+    },
+    {
+      "file": "scripts/validate-cli-release-manifest.sh",
+      "line": 95,
+      "literal": "https://reasonix.io/changelog/"
+    },
+    {
+      "file": "scripts/validate-cli-release-manifest.sh",
+      "line": 96,
+      "literal": "https://reasonix.io/changelog/"
+    },
+    {
+      "file": "scripts/validate-cli-release-manifest.sh",
+      "line": 105,
+      "literal": "https://github.com/"
+    },
+    {
+      "file": "scripts/validate-desktop-release-manifest.sh",
+      "line": 55,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/releases/download/${expected_tag}/"
+    },
+    {
+      "file": "scripts/validate-desktop-release-manifest.sh",
+      "line": 56,
+      "literal": "https://dl.reasonix.io/${expected_tag}/"
+    },
+    {
+      "file": "scripts/validate-desktop-release-manifest.sh",
+      "line": 57,
+      "literal": "https://dl.reasonix.io/desktop-preview/"
+    },
+    {
+      "file": "scripts/validate-desktop-release-manifest.sh",
+      "line": 85,
+      "literal": "https://reasonix.io/?download=desktop#start"
+    },
+    {
+      "file": "scripts/validate-desktop-release-manifest.sh",
+      "line": 87,
+      "literal": "https://reasonix.io/changelog/"
+    },
+    {
+      "file": "scripts/validate-desktop-release-manifest.sh",
+      "line": 88,
+      "literal": "https://reasonix.io/changelog/"
+    },
+    {
+      "file": "workers/accounts/src/email/resend.ts",
+      "line": 12,
+      "literal": "https://api.resend.com/emails"
+    },
+    {
+      "file": "workers/accounts/wrangler.toml",
+      "line": 16,
+      "literal": "https://reasonix.io"
+    },
+    {
+      "file": "workers/accounts/wrangler.toml",
+      "line": 18,
+      "literal": "http://localhost:8787"
+    },
+    {
+      "file": "workers/accounts/wrangler.toml",
+      "line": 19,
+      "literal": "https://id.reasonix.io"
+    },
+    {
+      "file": "workers/accounts/wrangler.toml",
+      "line": 21,
+      "literal": "https://reasonix.io,https://www.reasonix.io"
+    },
+    {
+      "file": "workers/crash-report/src/auth.ts",
+      "line": 28,
+      "literal": "https://id.reasonix.io"
+    },
+    {
+      "file": "workers/crash-report/src/auth.ts",
+      "line": 32,
+      "literal": "https://reasonix.io"
+    },
+    {
+      "file": "workers/crash-report/src/auth.ts",
+      "line": 64,
+      "literal": "https://id-cache.reasonix.io/${hex}"
+    },
+    {
+      "file": "workers/crash-report/src/auth_pages.ts",
+      "line": 16,
+      "literal": "https://reasonix.io/account/"
+    },
+    {
+      "file": "workers/crash-report/src/desktop_release.ts",
+      "line": 1,
+      "literal": "https://dl.reasonix.io"
+    },
+    {
+      "file": "workers/crash-report/src/desktop_release.ts",
+      "line": 2,
+      "literal": "https://api.github.com/repos/esengine/DeepSeek-Reasonix/releases?per_page=100"
+    },
+    {
+      "file": "workers/crash-report/src/desktop_release.ts",
+      "line": 3,
+      "literal": "https://api.github.com/repos/esengine/DeepSeek-Reasonix/releases/latest"
+    },
+    {
+      "file": "workers/crash-report/src/desktop_release.ts",
+      "line": 5,
+      "literal": "https://reasonix.io/?download=desktop#start"
+    },
+    {
+      "file": "workers/crash-report/src/desktop_release.ts",
+      "line": 175,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/releases/tag/${tag}"
+    },
+    {
+      "file": "workers/crash-report/src/desktop_release.ts",
+      "line": 239,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/releases/download/desktop-${version}/"
+    },
+    {
+      "file": "workers/crash-report/src/desktop_release.ts",
+      "line": 352,
+      "literal": "https://github.com/esengine/DeepSeek-Reasonix/releases/download/${tag}/latest.json"
+    },
+    {
+      "file": "workers/crash-report/src/desktop_release.ts",
+      "line": 400,
+      "literal": "https://crash.reasonix.io/v1/cli/releases/${channel}/latest.json"
+    },
+    {
+      "file": "workers/crash-report/src/index.ts",
+      "line": 1150,
+      "literal": "https://id.reasonix.io"
+    },
+    {
+      "file": "workers/crash-report/src/index.ts",
+      "line": 1151,
+      "literal": "https://reasonix.io"
+    },
+    {
+      "file": "workers/crash-report/src/index.ts",
+      "line": 1152,
+      "literal": "https://reasonix.io,https://www.reasonix.io"
+    },
+    {
+      "file": "workers/crash-report/src/index.ts",
+      "line": 1354,
+      "literal": "https://crash.reasonix.io/stats"
+    },
+    {
+      "file": "workers/crash-report/src/registry/lib/validation.ts",
+      "line": 80,
+      "literal": "https://github.com/${raw.slice("
+    },
+    {
+      "file": "workers/crash-report/src/registry/lib/validation.ts",
+      "line": 157,
+      "literal": "https://github.com/${raw.slice("
+    },
+    {
+      "file": "workers/crash-report/src/registry/lib/validation.ts",
+      "line": 158,
+      "literal": "https://${raw}"
+    },
+    {
+      "file": "workers/crash-report/src/registry/lib/validation.ts",
+      "line": 199,
+      "literal": "https://github.com/"
+    },
+    {
+      "file": "workers/crash-report/src/shell.ts",
+      "line": 298,
+      "literal": "https://reasonix.io"
+    },
+    {
+      "file": "workers/crash-report/src/shell.ts",
+      "line": 298,
+      "literal": "https://reasonix.io"
+    },
+    {
+      "file": "workers/crash-report/wrangler.toml",
+      "line": 26,
+      "literal": "https://id.reasonix.io"
+    },
+    {
+      "file": "workers/crash-report/wrangler.toml",
+      "line": 27,
+      "literal": "https://reasonix.io"
+    },
+    {
+      "file": "workers/crash-report/wrangler.toml",
+      "line": 29,
+      "literal": "https://reasonix.io,https://www.reasonix.io"
+    },
+    {
+      "file": "workers/forum/wrangler.toml",
+      "line": 15,
+      "literal": "https://reasonix.io"
+    },
+    {
+      "file": "workers/forum/wrangler.toml",
+      "line": 16,
+      "literal": "https://reasonix.io,https://www.reasonix.io"
+    },
+    {
+      "file": "workers/forum/wrangler.toml",
+      "line": 18,
+      "literal": "https://id.reasonix.io"
+    }
+  ]
+}

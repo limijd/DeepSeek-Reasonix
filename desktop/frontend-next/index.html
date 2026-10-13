@@ -2,11 +2,8 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self' data:; worker-src 'self' blob:; media-src 'self' blob:; object-src 'none'; frame-src 'none'; base-uri 'self'" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://id.reasonix.io" crossorigin />
-    <link rel="preconnect" href="https://remote.reasonix.io" crossorigin />
-    <link rel="dns-prefetch" href="//id.reasonix.io" />
-    <link rel="dns-prefetch" href="//remote.reasonix.io" />
     <title>Reasonix Studio</title>
     <script>
       // The boot screen below is painted by this file, before the bundle that
@@ -56,24 +53,7 @@
         };
       }
 
-      // A cloud connection otherwise waits for the whole application bundle
-      // before its first cross-origin round trip. Start the one-time grant as
-      // soon as the HTML is parsed so it overlaps JS/CSS download and parse.
-      window.__rxRemoteBootstrap = (function () {
-        try {
-          var device = new URLSearchParams(window.location.search).get("device");
-          if (!device) return null;
-          performance.mark("reasonix:remote:start");
-          return fetch("https://id.reasonix.io/me/remote-grants", {
-            method: "POST",
-            credentials: "include",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({ targetDeviceId: device, scopes: ["desktop"] }),
-          });
-        } catch (e) {
-          return null;
-        }
-      })();
+      window.__rxRemoteBootstrap = null;
     </script>
     <style>
       /* The boot screen owns the window from the first paint until the kernel

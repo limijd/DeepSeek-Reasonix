@@ -1,0 +1,5 @@
+--- FAIL: TestMemoryBenchRequiresReadSandbox (0.01s)
+    answer_isolation_test.go:40: MemoryBench accepted a state root inside the forbidden checkout
+FAIL
+FAIL	reasonix/cmd/e2ebench	0.044s
+FAIL
