@@ -3,6 +3,9 @@
 Thank you for your interest in contributing to Reasonix! This guide covers
 everything you need to get started.
 
+For work on this fork, follow the [fork maintenance guide](docs/FORK_MAINTENANCE.md)
+for upstream synchronization, privacy requirements, CI, and releases.
+
 ## Prerequisites
 
 - **Go 1.26+** — the version `go.mod` requires
