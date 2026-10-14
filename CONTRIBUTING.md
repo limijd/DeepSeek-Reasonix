@@ -58,8 +58,19 @@ Parents never import children.
 
 ### Building
 
+The `cli` build preset produces `bin/reasonix` (`bin/reasonix.exe` on Windows).
+The same executable includes the interactive TUI; `tui` is a runtime mode.
+
 ```bash
-make build          # go build ./...
+./build.sh cli
+./bin/reasonix tui
+```
+
+Run `./build.sh --help` to list build presets. The script builds without starting
+the agent and works when invoked from another directory.
+
+```bash
+make build          # CLI and example plugin binary
 make test           # go test ./...
 make vet            # go vet ./...
 make fmt            # gofmt -w .

@@ -9,11 +9,13 @@ GOEXE := $(shell go env GOEXE)
 # One pin for the Makefile and the CI lint job; see .github/workflows/ci.yml.
 GOLANGCI_VERSION := $(shell cat .golangci-version)
 
-.PHONY: build vet fmt lint lint-go lint-install lint-cross lint-update coverage-gate coverage-gate-update pricecheck check test studio-test sdk-test sdk-test-race hooks cross clean studio
+.PHONY: build build-cli vet fmt lint lint-go lint-install lint-cross lint-update coverage-gate coverage-gate-update pricecheck check test studio-test sdk-test sdk-test-race hooks cross clean studio
 
-build:
-	CGO_ENABLED=0 go build -ldflags "$(LDFLAGS)" -o bin/reasonix$(GOEXE) ./cmd/reasonix
+build: build-cli
 	CGO_ENABLED=0 go build -ldflags "$(LDFLAGS)" -o bin/reasonix-plugin-example$(GOEXE) ./cmd/reasonix-plugin-example
+
+build-cli:
+	CGO_ENABLED=0 go build -ldflags "$(LDFLAGS)" -o bin/reasonix$(GOEXE) ./cmd/reasonix
 
 vet:
 	go vet ./...
